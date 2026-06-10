@@ -37,14 +37,8 @@ P0 items were fixed and verified the same day. Remaining items are open, ordered
 
 - [ ] `prefers-reduced-motion` media query — disable particles, blob/drip animations, reveals, smooth scroll.
 - [ ] Pause the hero canvas rAF loop when the hero is scrolled off-screen (IntersectionObserver) — it currently renders forever; battery cost on mobile.
-- [ ] Small-text contrast failures: gold `#C8861A` (~3.0:1) and `#888888` (~3.4:1) on `#FAFAF8` are used for 10–11px labels — below 4.5:1 AA. Fix via the brand-coherence swaps below (Label Gold `#9A7328`, Muted `#777777`/darker).
-- [ ] **Brand coherence — finish the rebrand** (canonical tokens in `BRAND_GUIDE.md`, in `..\TDR Docs Claude\`; the June 2026 document rebrand + email system are the locked standard, the site predates them):
-  - [ ] Small gold labels (`.etext`, `.verse`, eyebrows): `#C8861A` → `#9A7328` (also the a11y fix above)
-  - [ ] Gold on dark sections/footer: `#C8861A` → `#D4A95C`
-  - [ ] Muted `#888888` → `#777777` (≥14px) or darker below that
-  - [ ] Buttons → rebrand CTA pattern: `#A8762E` fill + `#FAFAF8` text
-  - [ ] Display gold accents (hero italic, logo glow): `#C8861A` → `#B8893D`
-  - [ ] Display typeface: Cormorant Garamond → Fraunces (the locked brand face; ~1–2 hrs incl. size/line-height QA). Fold in the trivial neutrals alignment (`#1C1C1C`→`#1A1A1A`, `#FAFAF8`→`#F4F3F0`, `#E0DDD8`→`#EAEAEA`) during this pass.
+- [ ] Small-text contrast failures: gold `#C8861A` (~3.0:1) and `#888888` (~3.4:1) on `#FAFAF8` are used for 10–11px labels — below 4.5:1 AA. Owner kept the original palette (see below), so the in-palette fix if/when compliance matters: darken small gold labels toward `#8A6722` and small grays toward `#6E6E6E`, or bump those sizes — do NOT recolor display-size gold.
+- [x] **Brand decision (2026-06-10):** full migration to the document-rebrand tokens + Fraunces was built, previewed in-browser, and **declined — owner prefers the site's original look** (Cormorant Garamond + `#C8861A` gold + `#FAFAF8` canvas). Do not re-propose. The one adopted piece: all gold-fill buttons now use the shared CTA pattern `#A8762E` fill + `#FAFAF8` text, hover `#B8893D` (commit `fc067bf`) — matches email/docs CTAs. Canonical cross-media tokens live in `BRAND_GUIDE.md` (`..\TDR Docs Claude\`); the site keeps its own digital dialect deliberately.
 - [ ] Extract shared `styles.css` + `site.js` — the two pages duplicate ~70% of CSS and have already drifted (e.g. `--gold-h` exists only in index).
 - [ ] Calendar events are injected with `innerHTML` — switch summary/desc/time to `textContent` (anyone with write access to the Google Calendar can inject HTML/script).
 - [ ] Trim Google Fonts to the weights actually used (currently 9 variants across 2 families). Remove the no-op `@font-face { font-display: swap; }` rule.
