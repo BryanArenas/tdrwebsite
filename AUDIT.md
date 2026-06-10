@@ -21,36 +21,38 @@ P0 items were fixed and verified the same day. Remaining items are open, ordered
 - [x] Logo embedded as ~33KB base64 twice per page (byte-identical to the unused `TDR_Logo.png`) — replaced all 4 embeds with the file reference. index.html 158.7KB → 91.6KB, donors.html 105.7KB → 38.6KB, and the logo now caches across pages.
 - [x] Misleading enrollment error message — now says "Something went wrong sending your request" instead of blaming configuration.
 
-## 🔴 P1 — high value, open
+## ✅ P1 — fixed 2026-06-10, second pass (verified in browser)
 
-- [ ] **Forms have zero `<label>` elements** (placeholder-only). Add labels (visually-hidden is fine). WCAG 3.3.2; placeholders vanish on input and break autofill/screen readers.
-- [ ] **Closed mobile menu is `aria-hidden="true"` but its 8 links stay keyboard-focusable** (only translated off-screen). Add `visibility:hidden` when closed (with transition handling).
-- [ ] **Modal focus management** — move focus into modals on open, trap it, restore on close (enroll, confirm, tuition, calendar, give).
-- [ ] **donors.html head is missing canonical, all Open Graph tags, and favicon** (index has them). Add.
-- [ ] **No `og:image`/`twitter:image` on either page** — shared links render with no image. Create a 1200×630 share image.
-- [ ] **No JSON-LD structured data** — add `EducationalOrganization`/`School` schema with address (3057 Curry Ford Rd, Orlando FL 32806), phone, geo, opening hours. Highest-leverage local SEO item.
-- [ ] robots.txt + sitemap.xml.
-- [ ] **EmailJS hardening**: enable domain allowlist in EmailJS dashboard; add a honeypot field to both forms. Quota burn from bots = real enrollment leads silently failing.
-- [ ] Footer "News & Events" links to `tdracademy.org/news` which is not part of this repo — confirm it exists on the production host or remove.
+- [x] Form fields now all have accessible names via `aria-label` (both forms + the dynamically-added student rows). Verified zero unlabeled fields.
+- [x] Closed mobile menu gets `visibility:hidden` (with a transition delay so the slide-out still animates) — links no longer keyboard-reachable while "closed".
+- [x] Modal focus management for all five dialogs (enroll, confirm, tuition, calendar drawer, donors give): focus moves to the dialog's close/primary control on open, Tab/Shift+Tab wrap inside, and focus restores to the opener on close. Verified live including the Tab-wrap.
+- [x] donors.html head: canonical, full OG set, twitter card, theme-color, favicon.
+- [x] `og:image`/`twitter:image` on both pages → `og-image.png` (1200×630, generated on-brand: logo + "Rooted in faith. / Growing leaders." + eyebrow). `summary_large_image` cards.
+- [x] JSON-LD `School` schema on index (address, phone, email, hours, sameAs, slogan, logo). Geo coords deliberately omitted rather than guessed.
+- [x] robots.txt + sitemap.xml.
+- [x] Honeypot field on both forms — bots that fill it get a fake success and nothing is sent (verified: confirmation shows, no network call). **Still Bryan's action: enable the domain allowlist in the EmailJS dashboard** (Account → Security) — can't be done from code.
+- [x] Footer "News & Events": live `/news` confirmed **404** — the link now opens the Events calendar drawer instead.
+- [x] Favicon extracted from 6.7KB inline base64 to `favicon.png`, shared by both pages.
 
 ## 🟡 P2 — open
 
-- [ ] `prefers-reduced-motion` media query — disable particles, blob/drip animations, reveals, smooth scroll.
-- [ ] Pause the hero canvas rAF loop when the hero is scrolled off-screen (IntersectionObserver) — it currently renders forever; battery cost on mobile.
+- [x] `prefers-reduced-motion` honored on both pages (animations/transitions collapsed, smooth-scroll off, particle canvas skipped entirely).
+- [x] Hero canvas pauses when scrolled off-screen (IntersectionObserver) and when the tab is hidden.
+- [x] Calendar event text from the Google API now rendered via `textContent` — XSS-probed live: hostile `<img onerror>` title rendered inert, nothing executed.
+- [x] EmailJS CDN script pinned to `@4.4.1` with SRI `integrity` + `crossorigin` + `defer` (verified SDK still loads).
 - [ ] Small-text contrast failures: gold `#C8861A` (~3.0:1) and `#888888` (~3.4:1) on `#FAFAF8` are used for 10–11px labels — below 4.5:1 AA. Owner kept the original palette (see below), so the in-palette fix if/when compliance matters: darken small gold labels toward `#8A6722` and small grays toward `#6E6E6E`, or bump those sizes — do NOT recolor display-size gold.
 - [x] **Brand decision (2026-06-10):** full migration to the document-rebrand tokens + Fraunces was built, previewed in-browser, and **declined — owner prefers the site's original look** (Cormorant Garamond + `#C8861A` gold + `#FAFAF8` canvas). Do not re-propose. The one adopted piece: all gold-fill buttons now use the shared CTA pattern `#A8762E` fill + `#FAFAF8` text, hover `#B8893D` (commit `fc067bf`) — matches email/docs CTAs. Canonical cross-media tokens live in `BRAND_GUIDE.md` (`..\TDR Docs Claude\`); the site keeps its own digital dialect deliberately.
 - [ ] Extract shared `styles.css` + `site.js` — the two pages duplicate ~70% of CSS and have already drifted (e.g. `--gold-h` exists only in index).
-- [ ] Calendar events are injected with `innerHTML` — switch summary/desc/time to `textContent` (anyone with write access to the Google Calendar can inject HTML/script).
-- [ ] Trim Google Fonts to the weights actually used (currently 9 variants across 2 families). Remove the no-op `@font-face { font-display: swap; }` rule.
-- [ ] MOCK calendar events are hardcoded for the 2026–27 school year — will go stale silently.
+- [ ] Font-weight trim — checked: all 9 loaded variants are actually used; only possible saving is CG italic-400, not worth the breakage risk. (The no-op `@font-face` rule was removed.)
+- [ ] MOCK calendar events are hardcoded for the 2026–27 school year — will go stale silently. Live calendar is primary, so low urgency.
 
 ## 🟢 P3 — polish
 
-- [ ] SRI (`integrity` attr) + pinned version for the EmailJS CDN script.
-- [ ] Auto-update the © year.
-- [ ] `aria-hidden` on decorative contact emoji icons; footer `h5` → `h3`; hours table day cells → `th scope="row"`.
+- [x] SRI + pinned version for the EmailJS CDN script (done with the P2 batch).
+- [x] © year auto-updates on both pages.
+- [x] Decorative emoji `aria-hidden`; footer `h5` → `h3`; hours table day cells → `th scope="row"` (with matching CSS).
+- [x] Donors "Give Now" buttons now have a hover state (`#B8893D`).
 - [ ] Optimize TDR_Logo.png further (25KB at 300×224; could be ~8–10KB resized/WebP with PNG fallback).
-- [ ] Donors "Give Now" buttons declare a background transition but have no hover state.
 - [ ] Content check: "100% of donations go directly to student support" / "no overhead" are absolute claims — confirm accuracy with TDR Ministries before donors do.
 
 ## 💡 Feature backlog (all frontend-only, ordered by expected value)
