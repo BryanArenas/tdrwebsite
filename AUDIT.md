@@ -69,6 +69,42 @@ P0 items were fixed and verified the same day. Remaining items are open, ordered
 9. **Announcements banner** driven by the existing Google Calendar or a JSON file — office can update without code.
 10. **Sticky mobile enroll CTA.**
 
+## 📍 Local SEO / Google Business rankings (audited 2026-06-10)
+
+On-site technical SEO is in place (titles, descriptions, canonicals, OG/Twitter cards, School JSON-LD,
+robots.txt, sitemap). Tightened same day: `School` schema multi-typed `["School","LocalBusiness"]` with
+`@id`, `hasMap`, `areaServed`, and directory-profile `sameAs` links; same entity block added to donors.html
+(had none); `og:site_name`/`og:locale` on both pages; `lastmod` in sitemap.xml.
+
+**Off-site facts found (live web check):** site ranks #1 for its own name; citations exist on NCES,
+GreatSchools, US News, Private School Review, School Choice USA, Niche, Yelp, BBB, Orlando Magazine.
+Facebook page has 28 reviews, 100% recommended.
+
+**Only Bryan can do these (no code involved) — ordered by ranking impact:**
+
+1. **Google Business Profile** — search "TDR Learning Academy" in Google Maps. If unclaimed/missing,
+   claim at business.google.com. Set: primary category "Private school" (secondary: "Christian school",
+   "Elementary school", "High school"), exact NAP `TDR Learning Academy / 3057 Curry Ford Rd, Orlando, FL
+   32806 / (407) 694-8595` (match the site — decide once whether "Ste 1" is official and use it everywhere),
+   hours incl. Wed early close, website link, enrollment link, upload the gallery photos. GBP is the #1
+   driver of map-pack rankings.
+2. **Google reviews** — Google reviews (count + recency) are a top local ranking factor; Facebook reviews
+   are not. Ask the happiest FB reviewers to repost on Google via the GBP "share review form" short link.
+   Steady trickle (2–3/month) beats a one-day burst.
+3. **Google Search Console** (search.google.com/search-console) — verify the domain, submit sitemap.xml.
+   Same for Bing Webmaster Tools (free, also feeds DuckDuckGo/AI search).
+4. **Fix Yelp listing** — currently "TDR ACADEMY", categorized **"Child Care & Day Care"** (wrong). Claim
+   at biz.yelp.com, rename to TDR Learning Academy, category Private/Christian school.
+5. **Claim Niche + GreatSchools profiles** — Niche shows a D+ (stale/sparse data); claiming is free and
+   lets the school correct enrollment, photos, and respond to reviews. Lumos Learning shows "2.4 (29
+   reviews)" of unknown provenance — check and dispute if junk.
+6. Confirm `foundingDate` (directories say 2012) — can be added to schema once confirmed.
+
+**Reviews on the site:** testimonials section (backlog #5) is the right home for FB review quotes — get
+parent permission before republishing names. Do **NOT** add `aggregateRating`/`Review` schema for them:
+self-serving review markup on Organization/LocalBusiness violates Google's structured-data guidelines
+(ignored at best, manual action at worst).
+
 ## Hosting note
 
 Repo is private; GitHub Pages free tier requires a public repo. Netlify / Vercel / Cloudflare Pages deploy private repos free, allow custom headers (caching, CSP), and Netlify Forms could replace EmailJS entirely while staying fully static.
