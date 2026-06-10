@@ -57,8 +57,8 @@ P0 items were fixed and verified the same day. Remaining items are open, ordered
 
 ## 💡 Feature backlog (all frontend-only, ordered by expected value)
 
-1. **Photo gallery / virtual tour** — site has zero photos of the school; parents choose with their eyes. Static images + lightbox, lazy-loaded.
-2. **FL School Choice eligibility mini-wizard** — 3 questions → "you likely qualify" + links to FES/FTC applications. Converts the "$0 out-of-pocket" pitch into action.
+1. ✅ **Photo gallery** — built 2026-06-10. "Campus Life" section between Curriculum and Admissions; lazy-loaded 4:3 grid + full lightbox (arrows, swipe, Escape, focus trap). Section and nav links auto-hide while photo list is empty, so it deploys safely. Bryan adds photos per `gallery/README.md` (1600px long edge, JPEG ~78%, 150–400KB; media-release + no-names privacy rules).
+2. ✅ **FL School Choice eligibility wizard** — built 2026-06-10. "Scholarships" section before Contact: 3 questions (residency / grade / IEP), four result paths (qualify, qualify+FES-UA, non-FL → tuition modal, pre-K), CTAs to Step Up For Students + enrollment modal, honest state-determines-awards disclaimer, nothing saved or sent. Tuition-modal callout now links to it. All paths browser-verified.
 3. **FAQ accordion** + `FAQPage` JSON-LD — deflects office phone calls, earns rich results.
 4. **EN/ES language toggle** — static JSON dictionary; ESL support is already advertised.
 5. **Testimonials section** — 3–5 parent quotes, static.

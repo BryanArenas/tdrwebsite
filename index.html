@@ -639,6 +639,52 @@
     .hero-content { opacity: 1 !important; transform: none !important; }
     .hero-h1, .hero-sub, .hero-ctas, .hero-ey { opacity: 1; transform: none; }
 
+    /* ─── GALLERY ─────────────────────────────────────────── */
+    .gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-top:52px}
+    .gal-item{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:2px;cursor:zoom-in;background-color:#F3F1ED;border:none;padding:0;display:block;width:100%}
+    .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .45s var(--ease)}
+    .gal-item::after{content:'';position:absolute;inset:0;background-color:rgba(28,28,28,0);transition:background-color .3s}
+    .gal-item:hover img,.gal-item:focus-visible img{transform:scale(1.045)}
+    .gal-item:hover::after{background-color:rgba(28,28,28,0.10)}
+    .gal-item:focus-visible{outline:2px solid #C8861A;outline-offset:2px}
+
+    .lb-overlay{position:fixed;inset:0;z-index:400;background-color:rgba(28,28,28,0.93);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s var(--ease)}
+    .lb-overlay.open{opacity:1;pointer-events:all}
+    .lb-fig{max-width:88vw;margin:0;display:flex;flex-direction:column;align-items:center;gap:12px}
+    .lb-img{max-width:88vw;max-height:76vh;object-fit:contain;border-radius:2px;display:block}
+    .lb-cap{font-size:13px;font-weight:300;color:rgba(250,250,248,0.78);text-align:center;line-height:1.5}
+    .lb-count{font-size:11px;letter-spacing:.08em;color:rgba(250,250,248,0.45)}
+    .lb-btn{position:absolute;width:46px;height:46px;border-radius:50%;background-color:rgba(250,250,248,0.07);border:1px solid rgba(250,250,248,0.22);color:#FAFAF8;font-size:24px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background-color .2s}
+    .lb-btn:hover{background-color:rgba(250,250,248,0.18)}
+    .lb-prev{left:16px;top:50%;transform:translateY(-50%)}
+    .lb-next{right:16px;top:50%;transform:translateY(-50%)}
+    .lb-close{top:16px;right:16px}
+    @media(max-width:768px){
+      .gal-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+      .lb-btn{width:40px;height:40px;font-size:20px}
+      .lb-prev{left:8px}
+      .lb-next{right:8px}
+    }
+
+    /* ─── ELIGIBILITY WIZARD ──────────────────────────────── */
+    .wiz-card{background-color:#FAFAF8;border:1px solid #E0DDD8;border-radius:3px;padding:34px 30px}
+    .wiz-step-lbl{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#C8861A;margin-bottom:12px}
+    .wiz-q{font-family:var(--serif);font-size:23px;font-weight:400;color:#1C1C1C;line-height:1.25;margin-bottom:20px}
+    .wiz-opts{display:flex;flex-direction:column;gap:10px}
+    .wiz-opt{text-align:left;font-family:var(--sans);font-size:14px;font-weight:400;color:#4A4A4A;padding:13px 16px;border:1px solid #E0DDD8;border-radius:2px;background-color:#FAFAF8;cursor:pointer;transition:border-color .2s,color .2s,background-color .2s;width:100%}
+    .wiz-opt:hover{border-color:#C8861A;color:#1C1C1C;background-color:rgba(200,134,26,0.05)}
+    .wiz-meta{display:flex;align-items:center;justify-content:space-between;margin-top:22px;min-height:18px}
+    .wiz-dots{display:flex;gap:6px}
+    .wiz-dot{width:7px;height:7px;border-radius:50%;background-color:#E0DDD8;transition:background-color .2s}
+    .wiz-dot.on{background-color:#C8861A}
+    .wiz-back{font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#888888;background:none;border:none;cursor:pointer;padding:0;transition:color .2s}
+    .wiz-back:hover{color:#1C1C1C}
+    .wiz-r-title{font-family:var(--serif);font-size:24px;font-weight:400;color:#1C1C1C;line-height:1.2;margin-bottom:12px}
+    .wiz-r-body{font-size:14px;font-weight:300;line-height:1.7;color:#4A4A4A;margin-bottom:10px}
+    .wiz-ctas{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+    .wiz-ctas .btn-gold,.wiz-ctas .btn-outline{width:100%;justify-content:center}
+    .wiz-note{font-size:11px;font-weight:300;color:#888888;line-height:1.55;margin-top:16px}
+
     /* Closed mobile menu: hidden from keyboard & AT, still animates */
     .mob{visibility:hidden;transition:transform .5s var(--eout),visibility 0s .5s}
     .mob.open{visibility:visible;transition:transform .5s var(--eout),visibility 0s 0s}
@@ -727,6 +773,18 @@
   </div>
 </div>
 
+<!-- ─── GALLERY LIGHTBOX ──────────────────────────────────────── -->
+<div class="lb-overlay" id="lbOverlay" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button type="button" class="lb-btn lb-close" id="lbClose" aria-label="Close photo viewer">&#215;</button>
+  <button type="button" class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photo">&#8249;</button>
+  <figure class="lb-fig">
+    <img class="lb-img" id="lbImg" alt=""/>
+    <figcaption class="lb-cap" id="lbCap"></figcaption>
+    <span class="lb-count" id="lbCount" aria-hidden="true"></span>
+  </figure>
+  <button type="button" class="lb-btn lb-next" id="lbNext" aria-label="Next photo">&#8250;</button>
+</div>
+
 <!-- ─── UTILITY BAR ───────────────────────────────────────────── -->
 <div class="ubar" id="ubar">
   <a href="#curriculum" class="ubtn">For Students</a>
@@ -750,7 +808,9 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#curriculum">Curriculum</a></li>
+    <li><a href="#gallery">Gallery</a></li>
     <li><a href="#admissions">Admissions</a></li>
+    <li><a href="#eligibility">Scholarships</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="btn-dk" id="navEnrollBtn">Enroll <span class="arr">→</span></button>
@@ -763,7 +823,9 @@
 <div class="mob" id="mob" aria-hidden="true">
   <a href="#about"       class="ml">About</a>
   <a href="#curriculum"  class="ml">Curriculum</a>
+  <a href="#gallery"     class="ml">Gallery</a>
   <a href="#admissions"  class="ml">Admissions</a>
+  <a href="#eligibility" class="ml">Scholarships</a>
   <a href="#contact"     class="ml">Contact</a>
   <div class="mob-utils">
     <button type="button" class="mob-u enroll-trigger">Enroll Now</button>
@@ -904,6 +966,20 @@
 
 <hr class="rule"/>
 
+<!-- ─── GALLERY ───────────────────────────────────────────────── -->
+<section id="gallery">
+  <div class="eyebrow reveal"><div class="eline"></div><span class="etext">Campus Life</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;">
+    <h2 class="stitle reveal d1">A day in the life<br/><em>at TDR.</em></h2>
+    <p class="sbody reveal d2" style="max-width:320px;font-size:14px;color:#4A4A4A;">
+      Classrooms, worship, recess, and milestones — a few moments from our campus on Curry Ford Road.
+    </p>
+  </div>
+  <div class="gal-grid" id="galGrid"></div>
+</section>
+
+<hr class="rule"/>
+
 <!-- ─── ADMISSIONS ────────────────────────────────────────────── -->
 <section id="admissions" class="dark">
   <div class="adm-grid">
@@ -941,6 +1017,36 @@
       </div>
     </div>
 </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ─── SCHOLARSHIPS / ELIGIBILITY WIZARD ─────────────────────── -->
+<section id="eligibility" class="alt">
+  <div class="about-grid">
+    <div>
+      <div class="eyebrow reveal"><div class="eline"></div><span class="etext">Scholarships</span></div>
+      <h2 class="stitle reveal d1">Could your child attend<br/><em>tuition-free?</em></h2>
+      <p class="sbody reveal d2" style="margin-top:22px;margin-bottom:18px;">
+        Since 2023, Florida's school-choice scholarships are open to <strong>every K&ndash;12 student
+        in the state</strong> — regardless of household income. Most TDR families use the Family
+        Empowerment Scholarship (FES-EO) or the Florida Tax Credit Scholarship (FTC) to cover
+        most or all of their tuition.
+      </p>
+      <p class="sbody reveal d3" style="margin-bottom:18px;">
+        Answer three quick questions to see where your family stands. Nothing you click is saved
+        or sent anywhere — and our office is happy to walk you through the real application at
+        no obligation.
+      </p>
+      <p class="sbody reveal d4" style="font-size:13px;">
+        Learn more at <a href="https://www.fldoe.org/schools/school-choice/parent-resources/" target="_blank" rel="noopener" style="color:#A86E10;">FLDOE School Choice</a>
+        or call us at <a href="tel:+14076948595" style="color:#A86E10;">(407) 694-8595</a>.
+      </p>
+    </div>
+    <div class="reveal d2">
+      <div class="wiz-card" id="wizCard" aria-live="polite"></div>
+    </div>
+  </div>
 </section>
 
 <hr class="rule"/>
@@ -1030,7 +1136,9 @@
     <ul>
       <li><a href="#about">About Us</a></li>
       <li><a href="#curriculum">Curriculum</a></li>
+      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#admissions">Admissions</a></li>
+      <li><a href="#eligibility">Scholarships</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#" class="cal-mob-open">News &amp; Events</a></li>
     </ul>
@@ -1100,7 +1208,7 @@
   function dlgClose() { if (lastFocused && lastFocused.focus) lastFocused.focus(); lastFocused = null; }
   document.addEventListener('keydown', function(e) {
     if (e.key !== 'Tab') return;
-    var box = document.querySelector('.modal-overlay.open .modal, .confirm-overlay.open .confirm-box, .t-overlay.open .t-modal, .cal-drawer.open');
+    var box = document.querySelector('.modal-overlay.open .modal, .confirm-overlay.open .confirm-box, .t-overlay.open .t-modal, .cal-drawer.open, .lb-overlay.open');
     if (!box) return;
     var f = Array.prototype.filter.call(
       box.querySelectorAll('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])'),
@@ -1264,6 +1372,191 @@
   confirmOverlay.addEventListener('click', function(e) { if (e.target === confirmOverlay) closeEnrollConfirmation(); });
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeEnrollConfirmation(); });
 
+  // ── PHOTO GALLERY ──────────────────────────────────────────
+  // ADD PHOTOS HERE: drop the image file into the gallery/ folder,
+  // then add one line per photo below. Order here = display order.
+  // Format:
+  //   { src: 'gallery/your-file.jpg', alt: 'what a screen reader hears', caption: 'optional caption shown in the viewer' },
+  // Full how-to (sizes, naming, privacy notes): gallery/README.md
+  // The section and its nav links hide automatically while this list is empty.
+  var GALLERY = [
+  ];
+
+  var lbOverlay = document.getElementById('lbOverlay');
+  var lbImg     = document.getElementById('lbImg');
+  var lbCap     = document.getElementById('lbCap');
+  var lbCount   = document.getElementById('lbCount');
+  var lbIdx     = 0;
+
+  function renderGallery() {
+    var grid    = document.getElementById('galGrid');
+    var section = document.getElementById('gallery');
+    var links   = document.querySelectorAll('a[href="#gallery"]');
+    if (!GALLERY.length) {
+      section.style.display = 'none';
+      links.forEach(function(a) { (a.closest('li') || a).style.display = 'none'; });
+      return;
+    }
+    section.style.display = '';
+    links.forEach(function(a) { (a.closest('li') || a).style.display = ''; });
+    grid.innerHTML = '';
+    GALLERY.forEach(function(g, i) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'gal-item';
+      btn.setAttribute('aria-label', 'Open photo: ' + (g.caption || g.alt || 'photo ' + (i + 1)));
+      var img = document.createElement('img');
+      img.src = g.src;
+      img.alt = g.alt || g.caption || '';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      btn.appendChild(img);
+      btn.addEventListener('click', function() { openLb(i); });
+      grid.appendChild(btn);
+    });
+  }
+
+  function lbShow(i) {
+    lbIdx = (i + GALLERY.length) % GALLERY.length;
+    var g = GALLERY[lbIdx];
+    lbImg.src = g.src;
+    lbImg.alt = g.alt || g.caption || '';
+    lbCap.textContent = g.caption || '';
+    lbCount.textContent = (lbIdx + 1) + ' / ' + GALLERY.length;
+    [lbIdx + 1, lbIdx - 1].forEach(function(n) {
+      var ng = GALLERY[(n + GALLERY.length) % GALLERY.length];
+      if (ng) { var pre = new Image(); pre.src = ng.src; }
+    });
+  }
+  function openLb(i) {
+    lbShow(i);
+    lbOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    dlgOpen(document.getElementById('lbClose'));
+  }
+  function closeLb() {
+    if (!lbOverlay.classList.contains('open')) return;
+    lbOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+    dlgClose();
+  }
+  document.getElementById('lbClose').addEventListener('click', closeLb);
+  document.getElementById('lbPrev').addEventListener('click', function() { lbShow(lbIdx - 1); });
+  document.getElementById('lbNext').addEventListener('click', function() { lbShow(lbIdx + 1); });
+  lbOverlay.addEventListener('click', function(e) { if (e.target === lbOverlay) closeLb(); });
+  document.addEventListener('keydown', function(e) {
+    if (!lbOverlay.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLb();
+    else if (e.key === 'ArrowLeft') lbShow(lbIdx - 1);
+    else if (e.key === 'ArrowRight') lbShow(lbIdx + 1);
+  });
+  var lbTouchX = null;
+  lbOverlay.addEventListener('touchstart', function(e) { lbTouchX = e.touches[0].clientX; }, { passive: true });
+  lbOverlay.addEventListener('touchend', function(e) {
+    if (lbTouchX === null) return;
+    var dx = e.changedTouches[0].clientX - lbTouchX;
+    if (Math.abs(dx) > 48) lbShow(dx > 0 ? lbIdx - 1 : lbIdx + 1);
+    lbTouchX = null;
+  }, { passive: true });
+  renderGallery();
+
+  // ── SCHOLARSHIP ELIGIBILITY WIZARD ─────────────────────────
+  var WIZ_STEPS = [
+    { key: 'resident', q: 'Do you currently live in Florida?', opts: [
+      { label: 'Yes — we live in Florida', val: 'yes' },
+      { label: 'No — we live outside Florida', val: 'no' }
+    ]},
+    { key: 'grade', q: 'What grade will your child enter?', opts: [
+      { label: 'Kindergarten – 5th grade', val: 'k5' },
+      { label: '6th – 8th grade', val: 'ms' },
+      { label: '9th – 12th grade', val: 'hs' },
+      { label: 'Not school-age yet', val: 'prek' }
+    ]},
+    { key: 'needs', q: 'Does your child have an IEP, 504 plan, or a documented disability?', opts: [
+      { label: 'Yes', val: 'yes' },
+      { label: 'No', val: 'no' },
+      { label: 'Not sure', val: 'unsure' }
+    ]}
+  ];
+  var wizCard    = document.getElementById('wizCard');
+  var wizStep    = 0;
+  var wizAnswers = {};
+
+  function wizRenderStep() {
+    var s = WIZ_STEPS[wizStep];
+    wizCard.innerHTML =
+      '<p class="wiz-step-lbl">60-second check &middot; Question ' + (wizStep + 1) + ' of ' + WIZ_STEPS.length + '</p>' +
+      '<p class="wiz-q">' + s.q + '</p>' +
+      '<div class="wiz-opts"></div>' +
+      '<div class="wiz-meta">' +
+        '<div class="wiz-dots">' + WIZ_STEPS.map(function(_, i) {
+          return '<span class="wiz-dot' + (i <= wizStep ? ' on' : '') + '"></span>';
+        }).join('') + '</div>' +
+        (wizStep > 0 ? '<button type="button" class="wiz-back">&larr; Back</button>' : '') +
+      '</div>';
+    var opts = wizCard.querySelector('.wiz-opts');
+    s.opts.forEach(function(o) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'wiz-opt';
+      b.textContent = o.label;
+      b.addEventListener('click', function() { wizAnswer(s.key, o.val); });
+      opts.appendChild(b);
+    });
+    var back = wizCard.querySelector('.wiz-back');
+    if (back) back.addEventListener('click', function() { wizStep--; wizRenderStep(); });
+  }
+
+  function wizAnswer(key, val) {
+    wizAnswers[key] = val;
+    if (key === 'resident' && val === 'no') return wizResult('nofl');
+    if (key === 'grade' && val === 'prek') return wizResult('prek');
+    if (wizStep < WIZ_STEPS.length - 1) { wizStep++; wizRenderStep(); }
+    else wizResult('qualify');
+  }
+
+  function wizResult(kind) {
+    var html = '<p class="wiz-step-lbl">Your result</p>';
+    if (kind === 'qualify') {
+      html += '<p class="wiz-r-title">Good news — your child likely qualifies.</p>'
+        + '<p class="wiz-r-body">Every Florida K&ndash;12 student is eligible to apply for a state scholarship &mdash; the Family Empowerment Scholarship (FES-EO) or the Florida Tax Credit Scholarship (FTC) &mdash; worth roughly $8,000 per year toward private school tuition. Amounts vary by grade and county, and families under 185% of the federal poverty level receive priority processing.</p>';
+      if (wizAnswers.needs === 'yes') {
+        html += '<p class="wiz-r-body">Because your child has documented special needs, you may also qualify for the <strong>FES-UA (Unique Abilities)</strong> scholarship &mdash; often a larger award.</p>';
+      }
+      html += '<div class="wiz-ctas">'
+        + '<a class="btn-gold" href="https://www.stepupforstudents.org/" target="_blank" rel="noopener">Apply at Step Up For Students &rarr;</a>'
+        + '<button type="button" class="btn-outline" id="wizEnroll">Start enrollment at TDR</button>'
+        + '</div>'
+        + '<p class="wiz-note">Eligibility and award amounts are determined by the State of Florida and its scholarship funding organizations &mdash; not by TDR. Funds are awarded as applications are approved, so apply early. Questions? Call <a href="tel:+14076948595" style="color:#A86E10;">(407) 694-8595</a> &mdash; we&rsquo;ll walk you through it.</p>';
+    } else if (kind === 'nofl') {
+      html += '<p class="wiz-r-title">Florida scholarships require Florida residency.</p>'
+        + '<p class="wiz-r-body">FES and FTC are state programs for Florida residents. If your family is relocating to the Orlando area, you can apply as soon as you establish residency &mdash; and we&rsquo;d love to have you visit before then.</p>'
+        + '<div class="wiz-ctas">'
+        + '<button type="button" class="btn-outline" id="wizTuition">View tuition &amp; fees</button>'
+        + '<a class="btn-outline" href="#contact">Ask us a question</a>'
+        + '</div>';
+    } else {
+      html += '<p class="wiz-r-title">We&rsquo;ll be ready when they are.</p>'
+        + '<p class="wiz-r-body">TDR enrolls kindergarten through 12th grade, and Florida scholarships begin at kindergarten. Applications open each spring &mdash; apply the year your child starts K and the award can follow them here.</p>'
+        + '<div class="wiz-ctas">'
+        + '<a class="btn-outline" href="#contact">Talk to our office</a>'
+        + '</div>';
+    }
+    html += '<div class="wiz-meta"><button type="button" class="wiz-back" id="wizRestart">&#8635; Start over</button></div>';
+    wizCard.innerHTML = html;
+    var enrollBtn = document.getElementById('wizEnroll');
+    if (enrollBtn) enrollBtn.addEventListener('click', openModal);
+    var tuitionBtn = document.getElementById('wizTuition');
+    if (tuitionBtn) tuitionBtn.addEventListener('click', function() {
+      var t = document.getElementById('tuitionTrigger');
+      if (t) t.click();
+    });
+    document.getElementById('wizRestart').addEventListener('click', function() {
+      wizStep = 0; wizAnswers = {}; wizRenderStep();
+    });
+  }
+  wizRenderStep();
+
   // ── Contact form (mailto fallback — simple) ────────────────
   document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -1420,7 +1713,7 @@
         <div class="t-callout">
           <p class="t-callout-label">Florida School Choice</p>
           <p class="t-callout-body">Many families pay little to nothing out-of-pocket through FL School Choice and Tax Credit Scholarship programs.</p>
-          <a href="https://www.fldoe.org/schools/school-choice/parent-resources/" target="_blank" rel="noopener" class="t-callout-link">Check eligibility &rarr;</a>
+          <a href="#eligibility" class="t-callout-link">Check eligibility in 60 seconds &rarr;</a>
         </div>
         <div class="t-callout">
           <p class="t-callout-label">Questions?</p>
@@ -1847,6 +2140,13 @@
     tTrigger.addEventListener('click', openT);
     tClose.addEventListener('click', closeT);
     tOverlay.addEventListener('click', function(e) { if (e.target === tOverlay) closeT(); });
+    tOverlay.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function() {
+        closeT();
+        var target = document.querySelector(a.getAttribute('href'));
+        if (target) setTimeout(function() { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 60);
+      });
+    });
     document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && tOverlay.classList.contains('open')) closeT(); });
   })();
 </script>
