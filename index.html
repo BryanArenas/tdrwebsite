@@ -609,8 +609,10 @@
     .t-table td{font-size:13px;font-weight:300;color:#4A4A4A;padding:11px 12px;border-bottom:1px solid #F0EDE8;vertical-align:middle;line-height:1.4}
     .t-table tr:last-child td{border-bottom:none}
     .t-table tbody tr:hover td{background-color:rgba(200,134,26,0.05)}
-    .t-amt{font-family:var(--serif);font-size:15px;color:#1C1C1C;font-weight:400;white-space:nowrap}
+    .t-amt{font-family:var(--sans);font-size:16px;color:#1C1C1C;font-weight:500;white-space:nowrap;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
     .t-note{font-family:var(--sans);font-size:11px;color:#888888;font-weight:300}
+    .t-fn{font-family:var(--sans);font-size:11px;font-weight:600;color:#C8861A;vertical-align:super;line-height:0}
+    .t-fineprint{font-family:var(--sans);font-size:11px;font-weight:300;line-height:1.6;color:#888888;margin:-12px 0 24px}
     .t-callouts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .t-callout{background-color:rgba(200,134,26,0.07);border:1px solid rgba(200,134,26,0.18);border-radius:2px;padding:16px 18px}
     .t-callout-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#C8861A;margin-bottom:6px}
@@ -1012,7 +1014,7 @@
         <div class="step-n">3</div>
         <div class="step-body">
           <h4>Pay the Application Fee</h4>
-          <p>$100 for new students ($50 for re-enrollment), payable over the phone or in person. Once received, your application is officially in review.</p>
+          <p>$125 for a new student, with a $25 sibling discount for each additional child ($100 for the second, $75 for the third) &mdash; or $50 for re-enrollment. Payable over the phone or in person. Once received, your application is officially in review.</p>
         </div>
       </div>
     </div>
@@ -1707,7 +1709,7 @@
           <tr><th>Service</th><th>Payment Options</th><th>Fee</th></tr>
         </thead>
         <tbody>
-          <tr><td>Application Fee</td><td>Full payment</td><td class="t-amt">$100 <span class="t-note">($50 re-enroll)</span></td></tr>
+          <tr><td>Application Fee <span class="t-fn">*</span></td><td>Full payment</td><td class="t-amt">$125 <span class="t-note">($50 re-enroll)</span></td></tr>
           <tr><td>Curriculum Fees</td><td>Quarterly or full</td><td class="t-amt">$200 <span class="t-note">/ yr</span></td></tr>
           <tr><td>Extended Care &mdash; AM</td><td>Weekly or monthly</td><td class="t-amt">$100 <span class="t-note">/ mo</span></td></tr>
           <tr><td>Extended Care &mdash; PM</td><td>Weekly or monthly</td><td class="t-amt">$100 <span class="t-note">/ mo</span></td></tr>
@@ -1719,6 +1721,7 @@
           <tr><td>Field Trips</td><td>Full payment</td><td class="t-amt t-note">Varies by activity</td></tr>
         </tbody>
       </table>
+      <p class="t-fineprint"><span class="t-fn">*</span> New enrollment is $125 for the first child, with a $25 sibling discount for each additional child &mdash; $100 for the second, $75 for the third. Re-enrollment is $50.</p>
       <div class="t-callouts">
         <div class="t-callout">
           <p class="t-callout-label">Florida School Choice</p>
