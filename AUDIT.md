@@ -5,7 +5,8 @@ P0 items were fixed and verified the same day. Remaining items are open, ordered
 
 ## Site facts
 
-- Pure static frontend: `index.html`, `donors.html`, `TDR_Logo.png`. No build step.
+- Pure static frontend: `index.html` (English), `es.html` (Spanish), `donors.html`, `TDR_Logo.png`. No build step.
+- **Bilingual (EN/ES):** `es.html` is a full Spanish translation of `index.html`. A tiny inline `lang-detect` script in each `<head>` sends `navigator.language`-Spanish visitors to `es.html` on first visit; a manual EN/ES toggle (top bar on desktop, slide-out menu on mobile) persists the choice in `localStorage` (`tdr_lang`) and overrides detection. `hreflang` alternates + per-page canonicals are set and both URLs are in `sitemap.xml`. **Maintenance:** the two files are independent copies — any structural/JS/content change to `index.html` must be mirrored into `es.html` (and re-translated). `donors.html` is English-only by current scope.
 - Email via EmailJS (service `service_ijvuwox`; templates `template_myiat8i` enroll, `template_7rry6pf` contact; sends to Hello@tdracademy.org). Public key in source is by design.
 - Events via Google Calendar API. The API key in source is **verified referrer-restricted** (returns 403 `API_KEY_HTTP_REFERRER_BLOCKED` without an allowed referrer) — safe to keep in source, but the allowlist must be updated if the hosting domain ever changes. Side effect: on non-allowlisted domains (incl. localhost) the calendar uses the MOCK fallback events.
 - Donations link out to Tithely (no payment code on site).

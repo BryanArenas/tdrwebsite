@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8"/>
-  <script>/* lang-detect: send Spanish-preferring visitors to es.html unless they've chosen otherwise */(function(){try{var s=localStorage.getItem('tdr_lang');if(s==='es'){location.replace('es.html');return;}if(!s){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase();if(l.indexOf('es')===0){location.replace('es.html');}}}catch(e){}})();</script>
+  <script>/* lang-detect: send visitors who chose English back to index.html */(function(){try{if(localStorage.getItem('tdr_lang')==='en'){location.replace('index.html');}}catch(e){}})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="color-scheme" content="light"/>
-  <title>TDR Learning Academy — Christian K–12 Private School | Orlando, FL</title>
-  <meta property="og:title" content="TDR Learning Academy — Christian K–12 Private School"/>
-  <meta property="og:description" content="A faith-based K–12 private school in Orlando, FL. Open enrollment, Florida School Choice accepted."/>
+  <title>TDR Learning Academy — Escuela Cristiana Privada K–12 | Orlando, FL</title>
+  <meta property="og:title" content="TDR Learning Academy — Escuela Cristiana Privada K–12"/>
+  <meta property="og:description" content="Escuela privada cristiana K–12 en Orlando, FL. Inscripción abierta; aceptamos becas Florida School Choice."/>
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://www.tdracademy.org/"/>
+  <meta property="og:url" content="https://www.tdracademy.org/es.html"/>
   <meta property="og:image" content="https://www.tdracademy.org/og-image.png"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:image" content="https://www.tdracademy.org/og-image.png"/>
   <meta name="theme-color" content="#FAFAF8"/>
-  <link rel="canonical" href="https://www.tdracademy.org/"/>
+  <link rel="canonical" href="https://www.tdracademy.org/es.html"/>
   <link rel="alternate" hreflang="en" href="https://www.tdracademy.org/"/>
   <link rel="alternate" hreflang="es" href="https://www.tdracademy.org/es.html"/>
   <link rel="alternate" hreflang="x-default" href="https://www.tdracademy.org/"/>
-  <meta name="description" content="TDR Learning Academy is a Christian K–12 private school in Orlando, FL with open enrollment, Florida School Choice scholarships, and faith-integrated education."/>
+  <meta name="description" content="TDR Learning Academy es una escuela privada cristiana K–12 en Orlando, FL, con inscripción abierta, becas de Florida School Choice y educación integrada en la fe."/>
   <link rel="icon" type="image/png" href="favicon.png"/>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" as="style"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -31,13 +31,14 @@
     "@context": "https://schema.org",
     "@type": "School",
     "name": "TDR Learning Academy",
-    "description": "A Christian K–12 private school in Orlando, FL with open enrollment, Florida School Choice scholarships, and faith-integrated education.",
+    "description": "Escuela privada cristiana K–12 en Orlando, FL, con inscripción abierta, becas de Florida School Choice y educación integrada en la fe.",
+    "inLanguage": "es",
     "url": "https://www.tdracademy.org/",
     "logo": "https://www.tdracademy.org/TDR_Logo.png",
     "image": "https://www.tdracademy.org/og-image.png",
     "telephone": "+1-407-694-8595",
     "email": "Hello@tdracademy.org",
-    "slogan": "Planting good seed in our future leaders",
+    "slogan": "Sembrando buena semilla en nuestros futuros líderes",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "3057 Curry Ford Rd",
@@ -720,55 +721,55 @@
 <!-- ─── ENROLLMENT MODAL ──────────────────────────────────────── -->
 <div class="modal-overlay" id="enrollModal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="modal">
-    <button class="modal-close" id="modalClose" aria-label="Close">&#215;</button>
-    <h2 id="modal-title">Start Enrollment</h2>
-    <p class="modal-sub">We'll respond with next steps and your application packet.</p>
+    <button class="modal-close" id="modalClose" aria-label="Cerrar">&#215;</button>
+    <h2 id="modal-title">Iniciar inscripción</h2>
+    <p class="modal-sub">Le responderemos con los próximos pasos y su paquete de solicitud.</p>
 
     <form class="mform" id="enrollForm" novalidate>
       <div class="mrow">
-        <input class="minput" type="text"  id="parentFirst" name="parent_first" autocomplete="given-name" placeholder="Parent First Name" aria-label="Parent first name" required/>
-        <input class="minput" type="text"  id="parentLast" name="parent_last" autocomplete="family-name" placeholder="Parent Last Name" aria-label="Parent last name" required/>
+        <input class="minput" type="text"  id="parentFirst" name="parent_first" autocomplete="given-name" placeholder="Nombre del padre/madre" aria-label="Nombre del padre o madre" required/>
+        <input class="minput" type="text"  id="parentLast" name="parent_last" autocomplete="family-name" placeholder="Apellido del padre/madre" aria-label="Apellido del padre o madre" required/>
       </div>
-      <input class="minput" type="email" id="parentEmail" name="parent_email" autocomplete="email" placeholder="Your Email Address" aria-label="Your email address" required/>
-      <input class="minput" type="tel"   id="parentPhone" name="parent_phone" autocomplete="tel" placeholder="Phone Number (optional)" aria-label="Phone number (optional)"/>
+      <input class="minput" type="email" id="parentEmail" name="parent_email" autocomplete="email" placeholder="Su correo electrónico" aria-label="Su correo electrónico" required/>
+      <input class="minput" type="tel"   id="parentPhone" name="parent_phone" autocomplete="tel" placeholder="Número de teléfono (opcional)" aria-label="Número de teléfono (opcional)"/>
 
       <div style="height:1px;background:#E0DDD8;margin:4px 0;"></div>
 
       <div id="studentsContainer">
-        <p class="student-block-label" style="margin-bottom:8px;">Student(s)</p>
+        <p class="student-block-label" style="margin-bottom:8px;">Estudiante(s)</p>
         <!-- First student always present -->
         <div class="student-block" id="student-0">
-          <p class="student-block-label">Student 1</p>
-          <input class="minput" type="text" placeholder="Student Full Name" aria-label="Student full name" name="student_name" autocomplete="off" required/>
-          <select class="minput" name="student_grade" autocomplete="off" aria-label="Student grade level">
-            <option value="" disabled selected>Grade Level</option>
-            <option>Kindergarten</option>
-            <option>1st Grade</option><option>2nd Grade</option><option>3rd Grade</option>
-            <option>4th Grade</option><option>5th Grade</option><option>6th Grade</option>
-            <option>7th Grade</option><option>8th Grade</option><option>9th Grade</option><option>10th Grade</option><option>11th Grade</option><option>12th Grade</option>
+          <p class="student-block-label">Estudiante 1</p>
+          <input class="minput" type="text" placeholder="Nombre completo del estudiante" aria-label="Nombre completo del estudiante" name="student_name" autocomplete="off" required/>
+          <select class="minput" name="student_grade" autocomplete="off" aria-label="Grado del estudiante">
+            <option value="" disabled selected>Grado escolar</option>
+            <option>Kínder</option>
+            <option>1.º grado</option><option>2.º grado</option><option>3.º grado</option>
+            <option>4.º grado</option><option>5.º grado</option><option>6.º grado</option>
+            <option>7.º grado</option><option>8.º grado</option><option>9.º grado</option><option>10.º grado</option><option>11.º grado</option><option>12.º grado</option>
           </select>
         </div>
       </div>
 
       <button type="button" class="add-student" id="addStudent">
-        <span>+</span> Add Another Student
+        <span>+</span> Agregar otro estudiante
       </button>
 
       <div style="height:1px;background:#E0DDD8;margin:4px 0;"></div>
 
-      <textarea class="minput" id="message" name="message" autocomplete="off" placeholder="Any questions or additional information? (optional)" aria-label="Questions or additional information (optional)" rows="3"></textarea>
+      <textarea class="minput" id="message" name="message" autocomplete="off" placeholder="¿Alguna pregunta o información adicional? (opcional)" aria-label="Preguntas o información adicional (opcional)" rows="3"></textarea>
 
       <input type="text" id="hpEnroll" name="hp_company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none"/>
 
       <div class="modal-msg" id="formMsg"></div>
 
       <button type="submit" class="btn-gold" style="width:100%;justify-content:center;padding:15px 24px;font-size:13px;">
-        Send Enrollment Request <span>→</span>
+        Enviar solicitud de inscripción <span>→</span>
       </button>
 
       <p class="modal-note">
-        We'll reply to your email with the full application packet and next steps.<br/>
-        Currently accepting new students across all grades K–12.
+        Le responderemos por correo con el paquete completo de solicitud y los próximos pasos.<br/>
+        Actualmente aceptamos nuevos estudiantes en todos los grados K–12.
       </p>
     </form>
   </div>
@@ -778,79 +779,79 @@
 <div class="confirm-overlay" id="confirmOverlay" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
   <div class="confirm-box">
     <div class="confirm-icon">&#10003;</div>
-    <h3 id="confirm-title">Request Received!</h3>
-    <p>Thank you for reaching out to TDR Learning Academy. We've received your enrollment inquiry and will be in touch shortly via email or phone call — usually within one business day.</p>
-    <p class="confirm-sub">We look forward to welcoming your family.</p>
+    <h3 id="confirm-title">¡Solicitud recibida!</h3>
+    <p>Gracias por comunicarse con TDR Learning Academy. Hemos recibido su solicitud de inscripción y nos pondremos en contacto pronto por correo o llamada telefónica, normalmente dentro de un día hábil.</p>
+    <p class="confirm-sub">Esperamos darle la bienvenida a su familia.</p>
     <div class="confirm-actions">
-      <button class="btn-gold" id="confirmOk" style="justify-content:center;padding:12px 32px;">OK</button>
+      <button class="btn-gold" id="confirmOk" style="justify-content:center;padding:12px 32px;">Aceptar</button>
     </div>
-    <p class="confirm-timer" id="confirmTimer">Closing in <span id="confirmCount">8</span>s</p>
+    <p class="confirm-timer" id="confirmTimer">Se cierra en <span id="confirmCount">8</span> s</p>
   </div>
 </div>
 
 <!-- ─── GALLERY LIGHTBOX ──────────────────────────────────────── -->
-<div class="lb-overlay" id="lbOverlay" role="dialog" aria-modal="true" aria-label="Photo viewer">
-  <button type="button" class="lb-btn lb-close" id="lbClose" aria-label="Close photo viewer">&#215;</button>
-  <button type="button" class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photo">&#8249;</button>
+<div class="lb-overlay" id="lbOverlay" role="dialog" aria-modal="true" aria-label="Visor de fotos">
+  <button type="button" class="lb-btn lb-close" id="lbClose" aria-label="Cerrar visor de fotos">&#215;</button>
+  <button type="button" class="lb-btn lb-prev" id="lbPrev" aria-label="Foto anterior">&#8249;</button>
   <figure class="lb-fig">
     <img class="lb-img" id="lbImg" alt=""/>
     <figcaption class="lb-cap" id="lbCap"></figcaption>
     <span class="lb-count" id="lbCount" aria-hidden="true"></span>
   </figure>
-  <button type="button" class="lb-btn lb-next" id="lbNext" aria-label="Next photo">&#8250;</button>
+  <button type="button" class="lb-btn lb-next" id="lbNext" aria-label="Foto siguiente">&#8250;</button>
 </div>
 
 <!-- ─── UTILITY BAR ───────────────────────────────────────────── -->
 <div class="ubar" id="ubar">
-  <a href="#curriculum" class="ubtn">For Students</a>
+  <a href="#curriculum" class="ubtn">Estudiantes</a>
   <div class="udiv" aria-hidden="true"></div>
-  <a href="https://sis.factsmgt.com/accounts/Account/Login" target="_blank" rel="noopener" class="ubtn">For Parents</a>
+  <a href="https://sis.factsmgt.com/accounts/Account/Login" target="_blank" rel="noopener" class="ubtn">Padres</a>
   <div class="udiv" aria-hidden="true"></div>
-  <a href="donors.html" class="ubtn ubtn-gold">For Donors</a>
+  <a href="donors.html" class="ubtn ubtn-gold">Donantes</a>
   <div class="udiv" aria-hidden="true"></div>
-  <button class="ubtn" id="calToggle"><span aria-hidden="true">&#128197;</span> Events</button>
+  <button class="ubtn" id="calToggle"><span aria-hidden="true">&#128197;</span> Eventos</button>
   <div class="udiv udiv-lang" aria-hidden="true"></div>
-  <div class="ulang" role="group" aria-label="Language"><a href="index.html" class="ulang-opt is-active" data-setlang="en" aria-current="true">EN</a><span class="ulang-sep" aria-hidden="true">/</span><a href="es.html" class="ulang-opt" data-setlang="es" hreflang="es">ES</a></div>
+  <div class="ulang" role="group" aria-label="Idioma"><a href="index.html" class="ulang-opt" data-setlang="en" hreflang="en">EN</a><span class="ulang-sep" aria-hidden="true">/</span><a href="es.html" class="ulang-opt is-active" data-setlang="es" aria-current="true">ES</a></div>
 </div>
 
 <!-- ─── NAV ──────────────────────────────────────────────────── -->
-<nav class="nav" id="nav" aria-label="Main navigation">
-  <a href="#home" class="logo-wrap" aria-label="TDR Learning Academy home">
+<nav class="nav" id="nav" aria-label="Navegación principal">
+  <a href="#home" class="logo-wrap" aria-label="Inicio de TDR Learning Academy">
     <img src="TDR_Logo.png" alt="TDR Learning Academy" class="logo-img" width="59" height="44"/>
     <div class="logo-text">
       <span class="logo-name">TDR Learning Academy</span>
-      <span class="logo-sub">Orlando, FL &middot; Grades K&ndash;12</span>
+      <span class="logo-sub">Orlando, FL &middot; Grados K&ndash;12</span>
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#curriculum">Curriculum</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#admissions">Admissions</a></li>
-    <li><a href="#eligibility">Scholarships</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">Nosotros</a></li>
+    <li><a href="#curriculum">Plan de estudios</a></li>
+    <li><a href="#gallery">Galería</a></li>
+    <li><a href="#admissions">Admisiones</a></li>
+    <li><a href="#eligibility">Becas</a></li>
+    <li><a href="#contact">Contacto</a></li>
   </ul>
-  <button class="btn-dk" id="navEnrollBtn">Enroll <span class="arr">→</span></button>
-  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+  <button class="btn-dk" id="navEnrollBtn">Inscríbase <span class="arr">→</span></button>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <!-- ─── MOBILE MENU ───────────────────────────────────────────── -->
 <div class="mob" id="mob" aria-hidden="true">
-  <a href="#about"       class="ml">About</a>
-  <a href="#curriculum"  class="ml">Curriculum</a>
-  <a href="#gallery"     class="ml">Gallery</a>
-  <a href="#admissions"  class="ml">Admissions</a>
-  <a href="#eligibility" class="ml">Scholarships</a>
-  <a href="#contact"     class="ml">Contact</a>
+  <a href="#about"       class="ml">Nosotros</a>
+  <a href="#curriculum"  class="ml">Plan de estudios</a>
+  <a href="#gallery"     class="ml">Galería</a>
+  <a href="#admissions"  class="ml">Admisiones</a>
+  <a href="#eligibility" class="ml">Becas</a>
+  <a href="#contact"     class="ml">Contacto</a>
   <div class="mob-utils">
-    <button type="button" class="mob-u enroll-trigger">Enroll Now</button>
-    <a href="#curriculum" class="mob-u">Students</a>
-    <a href="https://sis.factsmgt.com/accounts/Account/Login" target="_blank" rel="noopener"  class="mob-u">Parents</a>
-    <a href="donors.html"   class="mob-u">Donors</a>
+    <button type="button" class="mob-u enroll-trigger">Inscríbase ya</button>
+    <a href="#curriculum" class="mob-u">Estudiantes</a>
+    <a href="https://sis.factsmgt.com/accounts/Account/Login" target="_blank" rel="noopener"  class="mob-u">Padres</a>
+    <a href="donors.html"   class="mob-u">Donantes</a>
   </div>
-  <div class="mob-lang" role="group" aria-label="Language"><a href="index.html" class="mob-u lang-active" data-setlang="en" aria-current="true">English</a><a href="es.html" class="mob-u" data-setlang="es" hreflang="es">Español</a></div>
+  <div class="mob-lang" role="group" aria-label="Idioma"><a href="index.html" class="mob-u" data-setlang="en" hreflang="en">English</a><a href="es.html" class="mob-u lang-active" data-setlang="es" aria-current="true">Español</a></div>
 </div>
 
 <!-- ─── HERO ─────────────────────────────────────────────────── -->
@@ -866,27 +867,26 @@
   <div class="hero-content">
     <div class="hero-ey">
       <div class="hero-ey-bar"></div>
-      <span class="hero-ey-txt">Orlando, FL &nbsp;&middot;&nbsp; Grades K&ndash;12 &nbsp;&middot;&nbsp; Open Enrollment</span>
+      <span class="hero-ey-txt">Orlando, FL &nbsp;&middot;&nbsp; Grados K&ndash;12 &nbsp;&middot;&nbsp; Inscripción abierta</span>
     </div>
     <h1 class="hero-h1" id="hero-h1">
-      Rooted in faith.<br/><em>Growing leaders.</em>
+      Arraigados en la fe.<br/><em>Formando líderes.</em>
     </h1>
     <p class="hero-sub">
-      A Christian K&ndash;12 private school in Orlando, FL — nurturing each student's God-given 
-      potential through faith-integrated academics and a caring community.
+      Una escuela privada cristiana K&ndash;12 en Orlando, FL, que cultiva el potencial dado por Dios de cada estudiante mediante una formación académica integrada en la fe y una comunidad afectuosa.
     </p>
     <div class="hero-ctas">
       <button class="btn-hero enroll-trigger">
-        Enroll Now <span class="arr">→</span>
+        Inscríbase ya <span class="arr">→</span>
       </button>
     </div>
     <div style="margin-top:16px;">
-      <button class="t-trigger" id="tuitionTrigger">View tuition &amp; fees &rarr;</button>
+      <button class="t-trigger" id="tuitionTrigger">Ver matrícula y cuotas &rarr;</button>
     </div>
   </div>
   <div class="scroll-hint" aria-hidden="true">
     <div class="sh-line"></div>
-    <span class="sh-txt">Scroll</span>
+    <span class="sh-txt">Desplácese</span>
 </div>
 </section>
 
@@ -896,34 +896,26 @@
 <section id="about">
   <div class="about-grid">
     <div>
-      <div class="eyebrow"><div class="eline"></div><span class="etext">About Us</span></div>
-      <h2 class="stitle reveal d1">Educating the whole child —<br/><em>mind, body, spirit.</em></h2>
+      <div class="eyebrow"><div class="eline"></div><span class="etext">Sobre nosotros</span></div>
+      <h2 class="stitle reveal d1">Educamos al niño en su totalidad:<br/><em>mente, cuerpo y espíritu.</em></h2>
       <p class="sbody reveal d2" style="margin-top:22px;margin-bottom:18px;">
-        Our mission is to educate the whole child. We believe every student can learn and achieve 
-        at high levels, and we are committed to providing the resources and support they need to 
-        succeed. Education at TDR is more than academics — it is about developing well-rounded 
-        individuals prepared to make a positive impact on the world.
+        Nuestra misión es educar al niño en su totalidad. Creemos que todo estudiante puede aprender y alcanzar altos niveles de logro, y estamos comprometidos a brindar los recursos y el apoyo que necesitan para tener éxito. La educación en TDR es más que lo académico: se trata de formar personas íntegras, preparadas para causar un impacto positivo en el mundo.
       </p>
       <p class="sbody reveal d3" style="margin-bottom:30px;">
-        We believe learning is most effective when it is personalized, engaging, and challenging. 
-        All students have unique learning styles, and we are committed to providing instruction 
-        and support that prepares them for success in college, career, and life — rooted in a 
-        Christian worldview.
+        Creemos que el aprendizaje es más eficaz cuando es personalizado, atractivo y desafiante. Cada estudiante tiene un estilo de aprendizaje único, y estamos comprometidos a ofrecer la enseñanza y el apoyo que los prepare para tener éxito en la universidad, la carrera profesional y la vida, con base en una cosmovisión cristiana.
       </p>
     </div>
     <div class="reveal d1">
-      <div class="badge" aria-label="Over 10 years serving Orlando">
+      <div class="badge" aria-label="Más de 10 años sirviendo a Orlando">
         <span class="badge-n">10<span style="font-size:18px">+</span></span>
-        <span class="badge-l">years<br/>Orlando</span>
+        <span class="badge-l">años<br/>en Orlando</span>
       </div>
       <blockquote class="pull-quote">
-        "Train up a child in the way he should go; even when he is old he will not depart from it."
+        «Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él».
       </blockquote>
-      <p class="verse" style="margin-top:12px;margin-bottom:24px;">Proverbs 22:6</p>
+      <p class="verse" style="margin-top:12px;margin-bottom:24px;">Proverbios 22:6</p>
       <p class="sbody">
-        "Planting the good seed in our future leaders" — a conviction that has guided TDR for 
-        over a decade. We firmly believe each student is capable of something amazing, and our 
-        role is simply to plant and watch them grow into something fruitful in their own life.
+        «Sembrando la buena semilla en nuestros futuros líderes»: una convicción que ha guiado a TDR por más de una década. Creemos firmemente que cada estudiante es capaz de algo extraordinario, y nuestra labor es simplemente sembrar y verlos crecer hasta dar fruto en su propia vida.
       </p>
     </div>
 </div>
@@ -933,12 +925,11 @@
 
 <!-- ─── CURRICULUM ────────────────────────────────────────────── -->
 <section id="curriculum" class="alt">
-  <div class="eyebrow reveal"><div class="eline"></div><span class="etext">Curriculum</span></div>
+  <div class="eyebrow reveal"><div class="eline"></div><span class="etext">Plan de estudios</span></div>
   <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;">
-    <h2 class="stitle reveal d1">Four pillars.<br/><em>One student.</em></h2>
+    <h2 class="stitle reveal d1">Cuatro pilares.<br/><em>Un solo estudiante.</em></h2>
     <p class="sbody reveal d2" style="max-width:320px;font-size:14px;color:#4A4A4A;">
-      Our curriculum integrates Biblical teaching throughout every subject area, 
-      developing the whole child academically, physically, and spiritually.
+      Nuestro plan de estudios integra la enseñanza bíblica en todas las materias, desarrollando al niño en su totalidad: académica, física y espiritualmente.
     </p>
   </div>
 
@@ -947,36 +938,28 @@
       <span class="curr-icon" aria-hidden="true">📐</span>
       <h3 class="curr-name">Common Core</h3>
       <p class="curr-body">
-        Standards-aligned instruction in Mathematics, English Language Arts, Science, 
-        and Social Studies — including ESL support. Students cover subjects from foundational 
-        arithmetic through Algebra, Biology, American History, and more.
+        Enseñanza alineada con los estándares en Matemáticas, Lengua y Literatura en inglés, Ciencias y Estudios Sociales, con apoyo de inglés como segundo idioma (ESL). Los estudiantes abarcan desde la aritmética básica hasta Álgebra, Biología, Historia de los Estados Unidos y más.
       </p>
     </div>
     <div class="curr-card reveal d1" role="listitem">
       <span class="curr-icon" aria-hidden="true">✝️</span>
-      <h3 class="curr-name">Bible Studies</h3>
+      <h3 class="curr-name">Estudios bíblicos</h3>
       <p class="curr-body">
-        Scripture is not an add-on at TDR — it runs through everything we do. Students 
-        study the life and teachings of Jesus, Old and New Testament, and develop a 
-        personal relationship with their faith at every grade level.
+        En TDR, las Escrituras no son un complemento: están presentes en todo lo que hacemos. Los estudiantes estudian la vida y las enseñanzas de Jesús, el Antiguo y el Nuevo Testamento, y cultivan una relación personal con su fe en cada grado.
       </p>
     </div>
     <div class="curr-card reveal d2" role="listitem">
       <span class="curr-icon" aria-hidden="true">🏃</span>
-      <h3 class="curr-name">Physical Education</h3>
+      <h3 class="curr-name">Educación física</h3>
       <p class="curr-body">
-        Physical instruction through routine exercise, team sports, Health, and Life Skills. 
-        PE builds discipline, teamwork, and healthy habits that serve students well beyond 
-        the classroom and into adult life.
+        Formación física mediante ejercicio habitual, deportes en equipo, Salud y Habilidades para la vida. La educación física fomenta la disciplina, el trabajo en equipo y hábitos saludables que acompañan a los estudiantes mucho más allá del aula, hasta la vida adulta.
       </p>
     </div>
     <div class="curr-card reveal d3" role="listitem">
       <span class="curr-icon" aria-hidden="true">🎨</span>
-      <h3 class="curr-name">Electives</h3>
+      <h3 class="curr-name">Materias optativas</h3>
       <p class="curr-body">
-        Art, Foreign Language, Music, and more. Electives give students space to discover 
-        and develop their individual gifts — celebrating what makes each child uniquely 
-        capable of something extraordinary.
+        Arte, Lengua extranjera, Música y más. Las materias optativas dan a los estudiantes el espacio para descubrir y desarrollar sus dones individuales, celebrando aquello que hace a cada niño singularmente capaz de algo extraordinario.
       </p>
     </div>
 </div>
@@ -986,11 +969,11 @@
 
 <!-- ─── GALLERY ───────────────────────────────────────────────── -->
 <section id="gallery">
-  <div class="eyebrow reveal"><div class="eline"></div><span class="etext">Campus Life</span></div>
+  <div class="eyebrow reveal"><div class="eline"></div><span class="etext">Vida escolar</span></div>
   <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;">
-    <h2 class="stitle reveal d1">A day in the life<br/><em>at TDR.</em></h2>
+    <h2 class="stitle reveal d1">Un día en la vida<br/><em>de TDR.</em></h2>
     <p class="sbody reveal d2" style="max-width:320px;font-size:14px;color:#4A4A4A;">
-      Classrooms, worship, recess, and milestones — a few moments from our campus on Curry Ford Road.
+      Aulas, adoración, recreo y momentos especiales: algunas escenas de nuestro plantel en Curry Ford Road.
     </p>
   </div>
   <div class="gal-grid" id="galGrid"></div>
@@ -1002,35 +985,33 @@
 <section id="admissions" class="dark">
   <div class="adm-grid">
     <div>
-      <div class="eyebrow reveal"><div class="eline"></div><span class="etext">Admissions</span></div>
-      <h2 class="stitle on-dark reveal d1">Start your<br/><em>new journey.</em></h2>
+      <div class="eyebrow reveal"><div class="eline"></div><span class="etext">Admisiones</span></div>
+      <h2 class="stitle on-dark reveal d1">Comience su<br/><em>nuevo camino.</em></h2>
       <p class="sbody on-dark reveal d2" style="margin-top:18px;margin-bottom:32px;">
-        We welcome applications year-round. The best time to apply is mid-April through 
-        end of June. Our office closes in July — apply early to secure your seat. 
-        Currently enrolling new students across all grades K&ndash;12.
+        Recibimos solicitudes durante todo el año. La mejor época para solicitar es de mediados de abril a finales de junio. Nuestra oficina cierra en julio; solicite con anticipación para asegurar su cupo. Actualmente inscribimos nuevos estudiantes en todos los grados K&ndash;12.
       </p>
-      <button class="btn-gold enroll-trigger reveal d3">Apply Now →</button>
+      <button class="btn-gold enroll-trigger reveal d3">Solicite ahora →</button>
     </div>
     <div>
       <div class="adm-step reveal">
         <div class="step-n">1</div>
         <div class="step-body">
-          <h4>Submit Your Interest</h4>
-          <p>Fill out our quick enrollment form with your contact info and your child's name and grade. We'll respond with the full application packet and next steps.</p>
+          <h4>Exprese su interés</h4>
+          <p>Complete nuestro breve formulario de inscripción con sus datos de contacto y el nombre y grado de su hijo/a. Le responderemos con el paquete completo de solicitud y los próximos pasos.</p>
         </div>
       </div>
       <div class="adm-step reveal d1">
         <div class="step-n">2</div>
         <div class="step-body">
-          <h4>Send Your Documents</h4>
-          <p>Email your completed application to Hello@tdracademy.org or bring it in person. Includes immunization records, birth certificate, report card, and a few other standard documents.</p>
+          <h4>Envíe sus documentos</h4>
+          <p>Envíe su solicitud completa por correo a Hello@tdracademy.org o tráigala en persona. Incluye registros de vacunación, certificado de nacimiento, boletín de calificaciones y algunos otros documentos habituales.</p>
         </div>
       </div>
       <div class="adm-step reveal d2">
         <div class="step-n">3</div>
         <div class="step-body">
-          <h4>Pay the Application Fee</h4>
-          <p>$125 for a new student, with a $25 sibling discount for each additional child ($100 for the second, $75 for the third) &mdash; or $50 for re-enrollment. Payable over the phone or in person. Once received, your application is officially in review.</p>
+          <h4>Pague la cuota de solicitud</h4>
+          <p>$125 por un nuevo estudiante, con un descuento de $25 por hermano por cada hijo/a adicional ($100 por el segundo, $75 por el tercero) &mdash; o $50 por reinscripción. Se paga por teléfono o en persona. Una vez recibida, su solicitud entra oficialmente en revisión.</p>
         </div>
       </div>
     </div>
@@ -1043,22 +1024,17 @@
 <section id="eligibility" class="alt">
   <div class="about-grid">
     <div>
-      <div class="eyebrow reveal"><div class="eline"></div><span class="etext">Scholarships</span></div>
-      <h2 class="stitle reveal d1">Could your child attend<br/><em>tuition-free?</em></h2>
+      <div class="eyebrow reveal"><div class="eline"></div><span class="etext">Becas</span></div>
+      <h2 class="stitle reveal d1">¿Podría su hijo/a estudiar<br/><em>sin pagar matrícula?</em></h2>
       <p class="sbody reveal d2" style="margin-top:22px;margin-bottom:18px;">
-        Since 2023, Florida's school-choice scholarships are open to <strong>every K&ndash;12 student
-        in the state</strong> — regardless of household income. Most TDR families use the Family
-        Empowerment Scholarship (FES-EO) or the Florida Tax Credit Scholarship (FTC) to cover
-        most or all of their tuition.
+        Desde 2023, las becas de libre elección escolar de Florida están disponibles para <strong>todos los estudiantes de K&ndash;12 del estado</strong>, sin importar los ingresos del hogar. La mayoría de las familias de TDR usan la Beca Family Empowerment (FES-EO) o la Beca Florida Tax Credit (FTC) para cubrir la mayor parte o la totalidad de su matrícula.
       </p>
       <p class="sbody reveal d3" style="margin-bottom:18px;">
-        Answer three quick questions to see where your family stands. Nothing you click is saved
-        or sent anywhere — and our office is happy to walk you through the real application at
-        no obligation.
+        Responda tres preguntas rápidas para ver la situación de su familia. Nada de lo que seleccione se guarda ni se envía a ningún lugar, y nuestra oficina con gusto lo guiará por la solicitud real sin compromiso.
       </p>
       <p class="sbody reveal d4" style="font-size:13px;">
-        Learn more at <a href="https://www.fldoe.org/schools/school-choice/parent-resources/" target="_blank" rel="noopener" style="color:#A86E10;">FLDOE School Choice</a>
-        or call us at <a href="tel:+14076948595" style="color:#A86E10;">(407) 694-8595</a>.
+        Conozca más en <a href="https://www.fldoe.org/schools/school-choice/parent-resources/" target="_blank" rel="noopener" style="color:#A86E10;">FLDOE School Choice</a>
+        o llámenos al <a href="tel:+14076948595" style="color:#A86E10;">(407) 694-8595</a>.
       </p>
     </div>
     <div class="reveal d2">
@@ -1071,42 +1047,42 @@
 
 <!-- ─── CONTACT ───────────────────────────────────────────────── -->
 <section id="contact">
-  <div class="eyebrow reveal"><div class="eline"></div><span class="etext">Contact Us</span></div>
-  <h2 class="stitle reveal d1" style="margin-bottom:52px;">We're here to<br/><em>answer your questions.</em></h2>
+  <div class="eyebrow reveal"><div class="eline"></div><span class="etext">Contáctenos</span></div>
+  <h2 class="stitle reveal d1" style="margin-bottom:52px;">Estamos aquí para<br/><em>responder sus preguntas.</em></h2>
 
   <div class="contact-grid">
     <div>
-      <h3 style="font-family:var(--serif);font-size:19px;font-weight:300;color:#1C1C1C;margin-bottom:18px;" class="reveal">Office Hours</h3>
-      <table class="hours-table reveal d1" aria-label="Office hours">
+      <h3 style="font-family:var(--serif);font-size:19px;font-weight:300;color:#1C1C1C;margin-bottom:18px;" class="reveal">Horario de oficina</h3>
+      <table class="hours-table reveal d1" aria-label="Horario de oficina">
         <tbody>
-          <tr><th scope="row">Monday</th><td>7:30 AM – 4:30 PM</td></tr>
-          <tr><th scope="row">Tuesday</th><td>7:30 AM – 4:30 PM</td></tr>
-          <tr><th scope="row">Wednesday</th><td>7:30 AM – 3:30 PM</td></tr>
-          <tr><th scope="row">Thursday</th><td>7:30 AM – 4:30 PM</td></tr>
-          <tr><th scope="row">Friday</th><td>7:30 AM – 4:30 PM</td></tr>
-          <tr><th scope="row">Saturday</th><td class="closed">Closed</td></tr>
-          <tr><th scope="row">Sunday</th><td class="closed">Closed</td></tr>
+          <tr><th scope="row">Lunes</th><td>7:30 a. m. – 4:30 p. m.</td></tr>
+          <tr><th scope="row">Martes</th><td>7:30 a. m. – 4:30 p. m.</td></tr>
+          <tr><th scope="row">Miércoles</th><td>7:30 a. m. – 3:30 p. m.</td></tr>
+          <tr><th scope="row">Jueves</th><td>7:30 a. m. – 4:30 p. m.</td></tr>
+          <tr><th scope="row">Viernes</th><td>7:30 a. m. – 4:30 p. m.</td></tr>
+          <tr><th scope="row">Sábado</th><td class="closed">Cerrado</td></tr>
+          <tr><th scope="row">Domingo</th><td class="closed">Cerrado</td></tr>
         </tbody>
       </table>
       <div class="ci reveal d2">
         <div class="ci-item">
           <div class="ci-icon" aria-hidden="true">📞</div>
           <div>
-            <p class="ci-lbl">Phone</p>
+            <p class="ci-lbl">Teléfono</p>
             <p class="ci-val"><a href="tel:+14076948595">(407) 694-8595</a></p>
           </div>
         </div>
         <div class="ci-item">
           <div class="ci-icon" aria-hidden="true">✉️</div>
           <div>
-            <p class="ci-lbl">Email</p>
+            <p class="ci-lbl">Correo</p>
             <p class="ci-val"><a href="mailto:Hello@tdracademy.org">Hello@tdracademy.org</a></p>
           </div>
         </div>
         <div class="ci-item">
           <div class="ci-icon" aria-hidden="true">📍</div>
           <div>
-            <p class="ci-lbl">Address</p>
+            <p class="ci-lbl">Dirección</p>
             <p class="ci-val">
               <a href="https://maps.google.com/?q=3057+Curry+Ford+Rd+Orlando+FL+32806" target="_blank" rel="noopener">
                 3057 Curry Ford Rd<br/>Orlando, FL 32806
@@ -1118,19 +1094,19 @@
     </div>
 
     <div>
-      <h3 style="font-family:var(--serif);font-size:19px;font-weight:300;color:#1C1C1C;margin-bottom:18px;" class="reveal">Send Us a Message</h3>
+      <h3 style="font-family:var(--serif);font-size:19px;font-weight:300;color:#1C1C1C;margin-bottom:18px;" class="reveal">Envíenos un mensaje</h3>
       <form class="cform reveal d1" id="contactForm" novalidate>
         <div class="cform-row">
-          <input class="minput" type="text"  id="cfFirst" name="first_name" autocomplete="given-name" placeholder="First Name" aria-label="First name" required/>
-          <input class="minput" type="text"  id="cfLast" name="last_name" autocomplete="family-name" placeholder="Last Name" aria-label="Last name" required/>
+          <input class="minput" type="text"  id="cfFirst" name="first_name" autocomplete="given-name" placeholder="Nombre" aria-label="Nombre" required/>
+          <input class="minput" type="text"  id="cfLast" name="last_name" autocomplete="family-name" placeholder="Apellido" aria-label="Apellido" required/>
         </div>
-        <input class="minput" type="email" id="cfEmail" name="email" autocomplete="email" placeholder="Email Address" aria-label="Email address" required/>
-        <input class="minput" type="tel"   id="cfPhone" name="phone" autocomplete="tel" placeholder="Phone Number (optional)" aria-label="Phone number (optional)"/>
-        <textarea class="minput" id="cfMessage" name="message" autocomplete="off" placeholder="Your message..." aria-label="Your message" rows="5" required></textarea>
+        <input class="minput" type="email" id="cfEmail" name="email" autocomplete="email" placeholder="Correo electrónico" aria-label="Correo electrónico" required/>
+        <input class="minput" type="tel"   id="cfPhone" name="phone" autocomplete="tel" placeholder="Número de teléfono (opcional)" aria-label="Número de teléfono (opcional)"/>
+        <textarea class="minput" id="cfMessage" name="message" autocomplete="off" placeholder="Su mensaje..." aria-label="Su mensaje" rows="5" required></textarea>
         <input type="text" id="hpContact" name="hp_company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none"/>
         <div class="modal-msg" id="contactMsg"></div>
         <button type="submit" class="btn-dk" style="width:100%;justify-content:center;padding:14px;">
-          Send Message <span class="arr">→</span>
+          Enviar mensaje <span class="arr">→</span>
         </button>
       </form>
     </div>
@@ -1142,7 +1118,7 @@
   <div class="ft-brand">
     <img src="TDR_Logo.png" alt="TDR Learning Academy" class="ft-logo" loading="lazy" width="48" height="36"/>
     <span class="ft-name">TDR Learning Academy</span>
-    <p class="ft-desc">A Christian K–12 private school in Orlando, FL. Planting good seed in our future leaders for over 10 years.</p>
+    <p class="ft-desc">Una escuela privada cristiana K–12 en Orlando, FL. Sembrando buena semilla en nuestros futuros líderes por más de 10 años.</p>
     <div class="ft-contact">
       <a href="tel:+14076948595">(407) 694-8595</a>
       <a href="mailto:Hello@tdracademy.org">Hello@tdracademy.org</a>
@@ -1150,29 +1126,29 @@
     </div>
   </div>
   <div class="ft-col">
-    <h3>School</h3>
+    <h3>Escuela</h3>
     <ul>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#curriculum">Curriculum</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#admissions">Admissions</a></li>
-      <li><a href="#eligibility">Scholarships</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#" class="cal-mob-open">News &amp; Events</a></li>
+      <li><a href="#about">Nosotros</a></li>
+      <li><a href="#curriculum">Plan de estudios</a></li>
+      <li><a href="#gallery">Galería</a></li>
+      <li><a href="#admissions">Admisiones</a></li>
+      <li><a href="#eligibility">Becas</a></li>
+      <li><a href="#contact">Contacto</a></li>
+      <li><a href="#" class="cal-mob-open">Noticias y eventos</a></li>
     </ul>
   </div>
   <div class="ft-col">
-    <h3>Families</h3>
+    <h3>Familias</h3>
     <ul>
-      <li><a href="#curriculum">For Students</a></li>
-      <li><a href="https://sis.factsmgt.com/accounts/Account/Login" target="_blank" rel="noopener">For Parents</a></li>
-      <li><a href="donors.html">For Donors</a></li>
+      <li><a href="#curriculum">Estudiantes</a></li>
+      <li><a href="https://sis.factsmgt.com/accounts/Account/Login" target="_blank" rel="noopener">Padres</a></li>
+      <li><a href="donors.html">Donantes</a></li>
       <li><a href="https://www.fldoe.org/schools/school-choice/parent-resources/" target="_blank" rel="noopener">FL School Choice</a></li>
-      <li><a href="https://linktr.ee/tdracademyaffiliates" target="_blank" rel="noopener">Affiliates</a></li>
+      <li><a href="https://linktr.ee/tdracademyaffiliates" target="_blank" rel="noopener">Afiliados</a></li>
     </ul>
   </div>
   <div class="ft-bottom">
-    <span>&copy; <span id="copyYear">2026</span> TDR Learning Academy. All rights reserved.</span>
+    <span>&copy; <span id="copyYear">2026</span> TDR Learning Academy. Todos los derechos reservados.</span>
     <span>3057 Curry Ford Rd, Orlando, FL 32806</span>
   </div>
 </footer>
@@ -1273,15 +1249,15 @@
     block.id = `student-${studentCount - 1}`;
     block.style.marginTop = '10px';
     block.innerHTML = `
-      <p class="student-block-label">Student ${studentCount}</p>
-      <button type="button" class="remove-student" aria-label="Remove student">&#215;</button>
-      <input class="minput" type="text" placeholder="Student Full Name" aria-label="Student full name" required/>
-      <select class="minput" aria-label="Student grade level">
-        <option value="" disabled selected>Grade Level</option>
-        <option>Kindergarten</option>
-        <option>1st Grade</option><option>2nd Grade</option><option>3rd Grade</option>
-        <option>4th Grade</option><option>5th Grade</option><option>6th Grade</option>
-        <option>7th Grade</option><option>8th Grade</option><option>9th Grade</option><option>10th Grade</option><option>11th Grade</option><option>12th Grade</option>
+      <p class="student-block-label">Estudiante ${studentCount}</p>
+      <button type="button" class="remove-student" aria-label="Quitar estudiante">&#215;</button>
+      <input class="minput" type="text" placeholder="Nombre completo del estudiante" aria-label="Nombre completo del estudiante" required/>
+      <select class="minput" aria-label="Grado del estudiante">
+        <option value="" disabled selected>Grado escolar</option>
+        <option>Kínder</option>
+        <option>1.º grado</option><option>2.º grado</option><option>3.º grado</option>
+        <option>4.º grado</option><option>5.º grado</option><option>6.º grado</option>
+        <option>7.º grado</option><option>8.º grado</option><option>9.º grado</option><option>10.º grado</option><option>11.º grado</option><option>12.º grado</option>
       </select>`;
     block.querySelector('.remove-student').addEventListener('click', () => {
       block.remove();
@@ -1293,7 +1269,7 @@
   function renumberStudents() {
     const blocks = container.querySelectorAll('.student-block');
     blocks.forEach((b, i) => {
-      b.querySelector('.student-block-label').textContent = `Student ${i + 1}`;
+      b.querySelector('.student-block-label').textContent = `Estudiante ${i + 1}`;
     });
     studentCount = blocks.length;
   }
@@ -1312,7 +1288,7 @@
     const email       = document.getElementById('parentEmail').value.trim();
 
     if (!parentFirst || !parentLast || !email) {
-      msg.textContent = 'Please fill in your name and email address.';
+      msg.textContent = 'Por favor, complete su nombre y su correo electrónico.';
       msg.className = 'modal-msg error';
       return;
     }
@@ -1321,21 +1297,21 @@
     const studentBlocks = container.querySelectorAll('.student-block');
     const students = Array.from(studentBlocks).map((b, i) => {
       const inputs = b.querySelectorAll('input, select');
-      return `Student ${i+1}: ${inputs[0].value || '—'} | Grade: ${inputs[1].value || '—'}`;
+      return `Estudiante ${i+1}: ${inputs[0].value || '—'} | Grado: ${inputs[1].value || '—'}`;
     }).join('\n');
 
     const templateParams = {
       to_email:     OFFICE_EMAIL,
       parent_name:  `${parentFirst} ${parentLast}`,
       parent_email: email,
-      parent_phone: document.getElementById('parentPhone').value || 'Not provided',
+      parent_phone: document.getElementById('parentPhone').value || 'No proporcionado',
       students,
-      message:      document.getElementById('message').value || 'None',
+      message:      document.getElementById('message').value || 'Ninguna',
       reply_to:     email,
     };
 
     const submitBtn = e.target.querySelector('[type=submit]');
-    submitBtn.textContent = 'Sending…';
+    submitBtn.textContent = 'Enviando…';
     submitBtn.disabled = true;
 
     try {
@@ -1348,13 +1324,13 @@
     } catch(err) {
       // Fallback: open mailto if EmailJS not yet configured
       const body = encodeURIComponent(
-        `New enrollment inquiry\n\nParent: ${parentFirst} ${parentLast}\nEmail: ${email}\nPhone: ${document.getElementById('parentPhone').value || 'N/A'}\n\n${students}\n\nNotes: ${document.getElementById('message').value || 'None'}`
+        `Nueva solicitud de inscripción\n\nPadre/Madre: ${parentFirst} ${parentLast}\nCorreo: ${email}\nTeléfono: ${document.getElementById('parentPhone').value || 'N/D'}\n\n${students}\n\nNotas: ${document.getElementById('message').value || 'Ninguna'}`
       );
-      window.location.href = `mailto:${OFFICE_EMAIL}?subject=New Enrollment Inquiry&body=${body}`;
-      msg.textContent = 'Something went wrong sending your request — opening your email app as a backup.';
+      window.location.href = `mailto:${OFFICE_EMAIL}?subject=Nueva solicitud de inscripción&body=${body}`;
+      msg.textContent = 'Ocurrió un problema al enviar su solicitud; abriremos su aplicación de correo como respaldo.';
       msg.className = 'modal-msg error';
     } finally {
-      submitBtn.textContent = 'Send Enrollment Request →';
+      submitBtn.textContent = 'Enviar solicitud de inscripción →';
       submitBtn.disabled = false;
     }
   });
@@ -1398,16 +1374,16 @@
   // Full how-to (sizes, naming, privacy notes): gallery/README.md
   // The section and its nav links hide automatically while this list is empty.
   var GALLERY = [
-    { src: 'gallery/kids-in-chapel.jpg', alt: 'Students singing and doing hand motions during chapel worship', caption: 'Chapel — worship together' },
-    { src: 'gallery/bhm-student-presentation.jpg', alt: 'A student presents a poster project about Madam C.J. Walker', caption: 'Black History Month presentations' },
-    { src: 'gallery/spirit-week-disney-day.jpg', alt: 'Students and staff dressed as Disney characters in the classroom', caption: 'Spirit Week — Disney Day' },
-    { src: 'gallery/kids-dancing.jpg', alt: 'Students performing a dance on stage', caption: 'Performing at our year-end celebration' },
-    { src: 'gallery/christmas-concert-student-performers.jpg', alt: 'Student performers in traditional dress beside Christmas trees', caption: 'Annual Christmas concert' },
-    { src: 'gallery/field-day-setup.jpg', alt: 'Obstacle course laid out on a grassy field on a sunny morning', caption: 'Field Day — the course awaits' },
-    { src: 'gallery/field-day-group.jpg', alt: 'Smiling volunteers in matching Field Day Squad shirts', caption: 'The Field Day Squad' },
-    { src: 'gallery/field-day-group-2.jpg', alt: 'Families and students gathered under the pavilion at the park', caption: 'Field Day at the park' },
-    { src: 'gallery/achievement-ceremony-2.jpg', alt: 'School leaders speaking on stage at the awards ceremony', caption: 'Awards ceremony' },
-    { src: 'gallery/achievement-ceremony.jpg', alt: 'Families seated before the TDR Academy stage at the class celebration', caption: 'Celebrating our students' }
+    { src: 'gallery/kids-in-chapel.jpg', alt: 'Estudiantes cantando y haciendo gestos con las manos durante la adoración en la capilla', caption: 'Capilla — adoración en comunidad' },
+    { src: 'gallery/bhm-student-presentation.jpg', alt: 'Una estudiante presenta un proyecto en cartel sobre Madam C.J. Walker', caption: 'Presentaciones del Mes de la Historia Afroamericana' },
+    { src: 'gallery/spirit-week-disney-day.jpg', alt: 'Estudiantes y personal vestidos como personajes de Disney en el aula', caption: 'Semana del Espíritu Escolar — Día de Disney' },
+    { src: 'gallery/kids-dancing.jpg', alt: 'Estudiantes presentando un baile en el escenario', caption: 'Presentación en nuestra celebración de fin de año' },
+    { src: 'gallery/christmas-concert-student-performers.jpg', alt: 'Estudiantes con vestimenta tradicional junto a árboles de Navidad', caption: 'Concierto navideño anual' },
+    { src: 'gallery/field-day-setup.jpg', alt: 'Pista de obstáculos montada en un campo de césped en una mañana soleada', caption: 'Día de campo — la pista espera' },
+    { src: 'gallery/field-day-group.jpg', alt: 'Voluntarios sonrientes con camisetas a juego del Field Day Squad', caption: 'El equipo del Día de campo' },
+    { src: 'gallery/field-day-group-2.jpg', alt: 'Familias y estudiantes reunidos bajo el quiosco del parque', caption: 'Día de campo en el parque' },
+    { src: 'gallery/achievement-ceremony-2.jpg', alt: 'Líderes de la escuela hablando en el escenario durante la ceremonia de premiación', caption: 'Ceremonia de premiación' },
+    { src: 'gallery/achievement-ceremony.jpg', alt: 'Familias sentadas frente al escenario de TDR Academy en la celebración de la clase', caption: 'Celebrando a nuestros estudiantes' }
   ];
 
   var lbOverlay = document.getElementById('lbOverlay');
@@ -1432,7 +1408,7 @@
       var btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'gal-item';
-      btn.setAttribute('aria-label', 'Open photo: ' + (g.caption || g.alt || 'photo ' + (i + 1)));
+      btn.setAttribute('aria-label', 'Abrir foto: ' + (g.caption || g.alt || 'foto ' + (i + 1)));
       var img = document.createElement('img');
       img.src = g.src;
       img.alt = g.alt || g.caption || '';
@@ -1490,20 +1466,20 @@
 
   // ── SCHOLARSHIP ELIGIBILITY WIZARD ─────────────────────────
   var WIZ_STEPS = [
-    { key: 'resident', q: 'Do you currently live in Florida?', opts: [
-      { label: 'Yes — we live in Florida', val: 'yes' },
-      { label: 'No — we live outside Florida', val: 'no' }
+    { key: 'resident', q: '¿Vive actualmente en Florida?', opts: [
+      { label: 'Sí, vivimos en Florida', val: 'yes' },
+      { label: 'No, vivimos fuera de Florida', val: 'no' }
     ]},
-    { key: 'grade', q: 'What grade will your child enter?', opts: [
-      { label: 'Kindergarten – 5th grade', val: 'k5' },
-      { label: '6th – 8th grade', val: 'ms' },
-      { label: '9th – 12th grade', val: 'hs' },
-      { label: 'Not school-age yet', val: 'prek' }
+    { key: 'grade', q: '¿A qué grado entrará su hijo/a?', opts: [
+      { label: 'Kínder a 5.º grado', val: 'k5' },
+      { label: '6.º a 8.º grado', val: 'ms' },
+      { label: '9.º a 12.º grado', val: 'hs' },
+      { label: 'Aún no tiene edad escolar', val: 'prek' }
     ]},
-    { key: 'needs', q: 'Does your child have an IEP, 504 plan, or a documented disability?', opts: [
-      { label: 'Yes', val: 'yes' },
+    { key: 'needs', q: '¿Su hijo/a tiene un IEP, un plan 504 o una discapacidad documentada?', opts: [
+      { label: 'Sí', val: 'yes' },
       { label: 'No', val: 'no' },
-      { label: 'Not sure', val: 'unsure' }
+      { label: 'No estoy seguro/a', val: 'unsure' }
     ]}
   ];
   var wizCard    = document.getElementById('wizCard');
@@ -1513,14 +1489,14 @@
   function wizRenderStep() {
     var s = WIZ_STEPS[wizStep];
     wizCard.innerHTML =
-      '<p class="wiz-step-lbl">60-second check &middot; Question ' + (wizStep + 1) + ' of ' + WIZ_STEPS.length + '</p>' +
+      '<p class="wiz-step-lbl">Evaluación de 60 segundos &middot; Pregunta ' + (wizStep + 1) + ' de ' + WIZ_STEPS.length + '</p>' +
       '<p class="wiz-q">' + s.q + '</p>' +
       '<div class="wiz-opts"></div>' +
       '<div class="wiz-meta">' +
         '<div class="wiz-dots">' + WIZ_STEPS.map(function(_, i) {
           return '<span class="wiz-dot' + (i <= wizStep ? ' on' : '') + '"></span>';
         }).join('') + '</div>' +
-        (wizStep > 0 ? '<button type="button" class="wiz-back">&larr; Back</button>' : '') +
+        (wizStep > 0 ? '<button type="button" class="wiz-back">&larr; Atrás</button>' : '') +
       '</div>';
     var opts = wizCard.querySelector('.wiz-opts');
     s.opts.forEach(function(o) {
@@ -1544,33 +1520,33 @@
   }
 
   function wizResult(kind) {
-    var html = '<p class="wiz-step-lbl">Your result</p>';
+    var html = '<p class="wiz-step-lbl">Su resultado</p>';
     if (kind === 'qualify') {
-      html += '<p class="wiz-r-title">Good news — your child likely qualifies.</p>'
-        + '<p class="wiz-r-body">Every Florida K&ndash;12 student is eligible to apply for a state scholarship &mdash; the Family Empowerment Scholarship (FES-EO) or the Florida Tax Credit Scholarship (FTC) &mdash; worth roughly $8,000 per year toward private school tuition. Amounts vary by grade and county, and families under 185% of the federal poverty level receive priority processing.</p>';
+      html += '<p class="wiz-r-title">Buenas noticias: es probable que su hijo/a califique.</p>'
+        + '<p class="wiz-r-body">Todo estudiante de K&ndash;12 en Florida puede solicitar una beca estatal &mdash; la Beca Family Empowerment (FES-EO) o la Beca Florida Tax Credit (FTC) &mdash; con un valor aproximado de $8,000 por año para la matrícula de escuela privada. Los montos varían según el grado y el condado, y las familias por debajo del 185% del nivel federal de pobreza reciben procesamiento prioritario.</p>';
       if (wizAnswers.needs === 'yes') {
-        html += '<p class="wiz-r-body">Because your child has documented special needs, you may also qualify for the <strong>FES-UA (Unique Abilities)</strong> scholarship &mdash; often a larger award.</p>';
+        html += '<p class="wiz-r-body">Como su hijo/a tiene necesidades especiales documentadas, también podría calificar para la beca <strong>FES-UA (Unique Abilities)</strong>, que a menudo otorga un monto mayor.</p>';
       }
       html += '<div class="wiz-ctas">'
-        + '<a class="btn-gold" href="https://www.stepupforstudents.org/" target="_blank" rel="noopener">Apply at Step Up For Students &rarr;</a>'
-        + '<button type="button" class="btn-outline" id="wizEnroll">Start enrollment at TDR</button>'
+        + '<a class="btn-gold" href="https://www.stepupforstudents.org/" target="_blank" rel="noopener">Solicite en Step Up For Students &rarr;</a>'
+        + '<button type="button" class="btn-outline" id="wizEnroll">Inicie la inscripción en TDR</button>'
         + '</div>'
-        + '<p class="wiz-note">Eligibility and award amounts are determined by the State of Florida and its scholarship funding organizations &mdash; not by TDR. Funds are awarded as applications are approved, so apply early. Questions? Call <a href="tel:+14076948595" style="color:#A86E10;">(407) 694-8595</a> &mdash; we&rsquo;ll walk you through it.</p>';
+        + '<p class="wiz-note">La elegibilidad y los montos de las becas los determina el Estado de Florida y sus organizaciones de financiamiento de becas, no TDR. Los fondos se otorgan a medida que se aprueban las solicitudes, así que solicite con anticipación. ¿Preguntas? Llame al <a href="tel:+14076948595" style="color:#A86E10;">(407) 694-8595</a> &mdash; lo guiaremos en el proceso.</p>';
     } else if (kind === 'nofl') {
-      html += '<p class="wiz-r-title">Florida scholarships require Florida residency.</p>'
-        + '<p class="wiz-r-body">FES and FTC are state programs for Florida residents. If your family is relocating to the Orlando area, you can apply as soon as you establish residency &mdash; and we&rsquo;d love to have you visit before then.</p>'
+      html += '<p class="wiz-r-title">Las becas de Florida requieren residencia en Florida.</p>'
+        + '<p class="wiz-r-body">FES y FTC son programas estatales para residentes de Florida. Si su familia se va a mudar al área de Orlando, puede solicitar en cuanto establezca su residencia &mdash; y con gusto le daríamos la bienvenida para una visita antes de eso.</p>'
         + '<div class="wiz-ctas">'
-        + '<button type="button" class="btn-outline" id="wizTuition">View tuition &amp; fees</button>'
-        + '<a class="btn-outline" href="#contact">Ask us a question</a>'
+        + '<button type="button" class="btn-outline" id="wizTuition">Ver matrícula y cuotas</button>'
+        + '<a class="btn-outline" href="#contact">Háganos una pregunta</a>'
         + '</div>';
     } else {
-      html += '<p class="wiz-r-title">We&rsquo;ll be ready when they are.</p>'
-        + '<p class="wiz-r-body">TDR enrolls kindergarten through 12th grade, and Florida scholarships begin at kindergarten. Applications open each spring &mdash; apply the year your child starts K and the award can follow them here.</p>'
+      html += '<p class="wiz-r-title">Estaremos listos cuando ellos lo estén.</p>'
+        + '<p class="wiz-r-body">TDR inscribe desde kínder hasta 12.º grado, y las becas de Florida comienzan en kínder. Las solicitudes abren cada primavera &mdash; solicite el año en que su hijo/a empiece el kínder y la beca podrá acompañarlo aquí.</p>'
         + '<div class="wiz-ctas">'
-        + '<a class="btn-outline" href="#contact">Talk to our office</a>'
+        + '<a class="btn-outline" href="#contact">Hable con nuestra oficina</a>'
         + '</div>';
     }
-    html += '<div class="wiz-meta"><button type="button" class="wiz-back" id="wizRestart">&#8635; Start over</button></div>';
+    html += '<div class="wiz-meta"><button type="button" class="wiz-back" id="wizRestart">&#8635; Empezar de nuevo</button></div>';
     wizCard.innerHTML = html;
     var enrollBtn = document.getElementById('wizEnroll');
     if (enrollBtn) enrollBtn.addEventListener('click', openModal);
@@ -1596,7 +1572,7 @@
     var cmsg  = document.getElementById('contactMsg');
 
     if (document.getElementById('hpContact').value) {
-      cmsg.textContent = '✓ Message sent! We’ll be in touch shortly.';
+      cmsg.textContent = '✓ ¡Mensaje enviado! Nos pondremos en contacto pronto.';
       cmsg.className = 'modal-msg success';
       cmsg.style.display = 'block';
       e.target.reset();
@@ -1604,14 +1580,14 @@
     }
 
     if (!first || !email || !msg) {
-      cmsg.textContent = 'Please fill in your name, email, and message.';
+      cmsg.textContent = 'Por favor, complete su nombre, correo y mensaje.';
       cmsg.className = 'modal-msg error';
       cmsg.style.display = 'block';
       return;
     }
 
     var submitBtn = e.target.querySelector('[type=submit]');
-    submitBtn.textContent = 'Sending…';
+    submitBtn.textContent = 'Enviando…';
     submitBtn.disabled = true;
 
     var templateParams = {
@@ -1619,23 +1595,23 @@
       first_name:   first,
       last_name:    last,
       reply_to:     email,
-      phone:        phone || 'Not provided',
+      phone:        phone || 'No proporcionado',
       message:      msg
     };
 
     try {
       if(typeof emailjs === 'undefined') throw new Error('EmailJS not loaded');
       await emailjs.send(EMAILJS_SERVICE_ID, 'template_7rry6pf', templateParams);
-      cmsg.textContent = '✓ Message sent! We’ll be in touch shortly.';
+      cmsg.textContent = '✓ ¡Mensaje enviado! Nos pondremos en contacto pronto.';
       cmsg.className = 'modal-msg success';
       cmsg.style.display = 'block';
       e.target.reset();
     } catch(err) {
       // Fallback to mailto if EmailJS fails
-      var body = encodeURIComponent('Name: ' + first + ' ' + last + '\nEmail: ' + email + '\nPhone: ' + (phone || 'N/A') + '\n\n' + msg);
-      window.location.href = 'mailto:' + OFFICE_EMAIL + '?subject=Website Inquiry from ' + first + ' ' + last + '&body=' + body;
+      var body = encodeURIComponent('Nombre: ' + first + ' ' + last + '\nCorreo: ' + email + '\nTeléfono: ' + (phone || 'N/D') + '\n\n' + msg);
+      window.location.href = 'mailto:' + OFFICE_EMAIL + '?subject=Consulta del sitio web de ' + first + ' ' + last + '&body=' + body;
     } finally {
-      submitBtn.textContent = 'Send Message →';
+      submitBtn.textContent = 'Enviar mensaje →';
       submitBtn.disabled = false;
     }
   });
@@ -1693,9 +1669,9 @@
 </script>
 
 <div class="cal-scrim" id="calScrim"></div>
-<div class="cal-drawer" id="calDrawer" role="dialog" aria-modal="true" aria-label="School Calendar">
+<div class="cal-drawer" id="calDrawer" role="dialog" aria-modal="true" aria-label="Calendario escolar">
   <div class="cal-hdr">
-    <div><h3>School Calendar</h3><p id="calSub">TDR Learning Academy</p></div>
+    <div><h3>Calendario escolar</h3><p id="calSub">TDR Learning Academy</p></div>
     <button class="cal-close-btn" id="calClose">&#215;</button>
   </div>
   <div class="cal-mnav">
@@ -1705,12 +1681,12 @@
   </div>
   <div class="cal-gwrap">
     <div class="cal-grid" id="calGrid">
-      <div class="cal-dow">Su</div><div class="cal-dow">Mo</div><div class="cal-dow">Tu</div>
-      <div class="cal-dow">We</div><div class="cal-dow">Th</div><div class="cal-dow">Fr</div>
-      <div class="cal-dow">Sa</div>
+      <div class="cal-dow">Do</div><div class="cal-dow">Lu</div><div class="cal-dow">Ma</div>
+      <div class="cal-dow">Mi</div><div class="cal-dow">Ju</div><div class="cal-dow">Vi</div>
+      <div class="cal-dow">Sá</div>
     </div>
   </div>
-  <div class="cal-evlist" id="calEvList"><div class="cal-spin">Loading events</div></div>
+  <div class="cal-evlist" id="calEvList"><div class="cal-spin">Cargando eventos</div></div>
   <div class="cal-foot">
     <p>Updates automatically</p>
     <a href="https://calendar.google.com" target="_blank" rel="noopener">Open in Google ↗</a>
@@ -1721,39 +1697,39 @@
   <div class="t-modal">
     <div class="t-modal-head">
       <div>
-        <h2 id="tuition-title">Tuition &amp; Fees</h2>
-        <p class="t-modal-sub">Updated annually. TDR is a non-profit &mdash; all fees go directly to operations.</p>
+        <h2 id="tuition-title">Matrícula y cuotas</h2>
+        <p class="t-modal-sub">Se actualiza cada año. TDR es una organización sin fines de lucro &mdash; todas las cuotas se destinan directamente a las operaciones.</p>
       </div>
-      <button class="t-close" id="tuitionClose" aria-label="Close">&#215;</button>
+      <button class="t-close" id="tuitionClose" aria-label="Cerrar">&#215;</button>
     </div>
     <div class="t-modal-body">
       <table class="t-table">
         <thead>
-          <tr><th>Service</th><th>Payment Options</th><th>Fee</th></tr>
+          <tr><th>Servicio</th><th>Opciones de pago</th><th>Cuota</th></tr>
         </thead>
         <tbody>
-          <tr><td>Application Fee <span class="t-fn">*</span></td><td>Full payment</td><td class="t-amt">$125 <span class="t-note">($50 re-enroll)</span></td></tr>
-          <tr><td>Curriculum Fees</td><td>Quarterly or full</td><td class="t-amt">$200 <span class="t-note">/ yr</span></td></tr>
-          <tr><td>Extended Care &mdash; AM</td><td>Weekly or monthly</td><td class="t-amt">$100 <span class="t-note">/ mo</span></td></tr>
-          <tr><td>Extended Care &mdash; PM</td><td>Weekly or monthly</td><td class="t-amt">$100 <span class="t-note">/ mo</span></td></tr>
-          <tr><td>Standardized Testing</td><td>Full payment</td><td class="t-amt">$25</td></tr>
-          <tr><td>Official Transcript</td><td>Full payment</td><td class="t-amt">$5</td></tr>
-          <tr><td>Transportation</td><td>Affiliate</td><td class="t-amt t-note">See affiliates</td></tr>
-          <tr><td>Special Services</td><td>&mdash;</td><td class="t-amt t-note">School Choice matrix</td></tr>
-          <tr><td>School Supplies</td><td>&mdash;</td><td class="t-amt t-note">Supply list provided</td></tr>
-          <tr><td>Field Trips</td><td>Full payment</td><td class="t-amt t-note">Varies by activity</td></tr>
+          <tr><td>Cuota de solicitud <span class="t-fn">*</span></td><td>Pago completo</td><td class="t-amt">$125 <span class="t-note">($50 reinscripción)</span></td></tr>
+          <tr><td>Cuotas de materiales</td><td>Trimestral o completo</td><td class="t-amt">$200 <span class="t-note">/ año</span></td></tr>
+          <tr><td>Cuidado extendido &mdash; mañana</td><td>Semanal o mensual</td><td class="t-amt">$100 <span class="t-note">/ mes</span></td></tr>
+          <tr><td>Cuidado extendido &mdash; tarde</td><td>Semanal o mensual</td><td class="t-amt">$100 <span class="t-note">/ mes</span></td></tr>
+          <tr><td>Pruebas estandarizadas</td><td>Pago completo</td><td class="t-amt">$25</td></tr>
+          <tr><td>Expediente académico oficial</td><td>Pago completo</td><td class="t-amt">$5</td></tr>
+          <tr><td>Transporte</td><td>Afiliado</td><td class="t-amt t-note">Ver afiliados</td></tr>
+          <tr><td>Servicios especiales</td><td>&mdash;</td><td class="t-amt t-note">Matriz de School Choice</td></tr>
+          <tr><td>Útiles escolares</td><td>&mdash;</td><td class="t-amt t-note">Se entrega lista de útiles</td></tr>
+          <tr><td>Excursiones</td><td>Pago completo</td><td class="t-amt t-note">Varía según la actividad</td></tr>
         </tbody>
       </table>
-      <p class="t-fineprint"><span class="t-fn">*</span> New enrollment is $125 for the first child, with a $25 sibling discount for each additional child &mdash; $100 for the second, $75 for the third. Re-enrollment is $50.</p>
+      <p class="t-fineprint"><span class="t-fn">*</span> La nueva inscripción es de $125 para el primer hijo/a, con un descuento de $25 por hermano por cada hijo/a adicional &mdash; $100 para el segundo y $75 para el tercero. La reinscripción es de $50.</p>
       <div class="t-callouts">
         <div class="t-callout">
           <p class="t-callout-label">Florida School Choice</p>
-          <p class="t-callout-body">Many families pay little to nothing out-of-pocket through FL School Choice and Tax Credit Scholarship programs.</p>
-          <a href="#eligibility" class="t-callout-link">Check eligibility in 60 seconds &rarr;</a>
+          <p class="t-callout-body">Muchas familias pagan poco o nada de su bolsillo gracias a los programas FL School Choice y Tax Credit Scholarship.</p>
+          <a href="#eligibility" class="t-callout-link">Verifique su elegibilidad en 60 segundos &rarr;</a>
         </div>
         <div class="t-callout">
-          <p class="t-callout-label">Questions?</p>
-          <p class="t-callout-body">Our office can walk you through payment options and scholarship applications at no obligation.</p>
+          <p class="t-callout-label">¿Preguntas?</p>
+          <p class="t-callout-body">Nuestra oficina puede explicarle las opciones de pago y las solicitudes de becas sin compromiso.</p>
           <a href="tel:+14076948595" class="t-callout-link">(407) 694-8595 &rarr;</a>
         </div>
       </div>
@@ -1767,20 +1743,20 @@
   var CAL_ID      = '23852181907878f326f31e391195ab45c73194120a383651e1633ff0a2384a0e@group.calendar.google.com'; // swap: 'codearenas@gmail.com'
 
   var MOCK = [
-    {id:1, summary:'First Day of School',              start:'2026-08-17', time:'All Day',        desc:'Welcome back, TDR families!'},
-    {id:2, summary:'Early Release Wednesday',          start:'2026-09-02', time:'3:30 PM',        desc:'Office closes at 3:30 PM.'},
-    {id:3, summary:'School Choice Deadline',           start:'2026-09-15', time:'5:00 PM',        desc:'Submit FL School Choice applications.'},
-    {id:4, summary:'Fall Parent-Teacher Conference',   start:'2026-10-08', time:'4:00\u20136:00 PM', desc:'Schedule your slot with the office.'},
-    {id:5, summary:'No School \u2014 Columbus Day',    start:'2026-10-12', time:'All Day',        desc:'Office closed.'},
-    {id:6, summary:'Field Day',                        start:'2026-10-23', time:'9:00 AM',        desc:'Come dressed for outdoor activities!'},
-    {id:7, summary:'Thanksgiving Break Begins',        start:'2026-11-23', time:'All Day',        desc:'Classes resume November 30.'},
-    {id:8, summary:'Annual Christmas Concert',         start:'2026-12-18', time:'6:00 PM',        desc:'Dance, art, music & skits. All families welcome.'},
-    {id:9, summary:'Winter Break Begins',              start:'2026-12-22', time:'All Day',        desc:'Classes resume January 5, 2027.'},
-    {id:10,summary:'Awards Ceremony',                  start:'2027-05-22', time:'10:00 AM',       desc:'Celebrating student achievements.'},
+    {id:1, summary:'Primer día de clases',              start:'2026-08-17', time:'Todo el día',        desc:'¡Bienvenidos de nuevo, familias de TDR!'},
+    {id:2, summary:'Miércoles de salida temprana',          start:'2026-09-02', time:'3:30 PM',        desc:'La oficina cierra a las 3:30 p. m.'},
+    {id:3, summary:'Fecha límite de School Choice',           start:'2026-09-15', time:'5:00 PM',        desc:'Envíe las solicitudes de FL School Choice.'},
+    {id:4, summary:'Conferencia de padres y maestros (otoño)',   start:'2026-10-08', time:'4:00\u20136:00 PM', desc:'Agende su cita con la oficina.'},
+    {id:5, summary:'No hay clases \u2014 Columbus Day',    start:'2026-10-12', time:'Todo el día',        desc:'Oficina cerrada.'},
+    {id:6, summary:'Día de campo',                        start:'2026-10-23', time:'9:00 AM',        desc:'¡Venga vestido para actividades al aire libre!'},
+    {id:7, summary:'Inicio del receso de Acción de Gracias',        start:'2026-11-23', time:'Todo el día',        desc:'Las clases se reanudan el 30 de noviembre.'},
+    {id:8, summary:'Concierto navideño anual',         start:'2026-12-18', time:'6:00 PM',        desc:'Danza, arte, música y representaciones. Todas las familias son bienvenidas.'},
+    {id:9, summary:'Inicio del receso de invierno',              start:'2026-12-22', time:'Todo el día',        desc:'Las clases se reanudan el 5 de enero de 2027.'},
+    {id:10,summary:'Ceremonia de premiación',                  start:'2027-05-22', time:'10:00 AM',       desc:'Celebramos los logros de los estudiantes.'},
   ];
 
-  var MONTHS  = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-  var MSHORT  = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var MONTHS  = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  var MSHORT  = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
 
   var calIsOpen   = false;
   var calLoaded   = false;
@@ -1834,7 +1810,7 @@
   function loadCalEvents() {
     calLoaded = true;
     if (CAL_API_KEY && CAL_ID) {
-      calEvList.innerHTML = '<div class="cal-spin">Loading events</div>';
+      calEvList.innerHTML = '<div class="cal-spin">Cargando eventos</div>';
       var now    = new Date(); now.setHours(0,0,0,0);
       var future = new Date(now); future.setFullYear(future.getFullYear() + 1);
       var url = 'https://www.googleapis.com/calendar/v3/calendars/'
@@ -1850,11 +1826,11 @@
           allEvents = (data.items || []).map(function(ev) {
             var startStr = ev.start.date || (ev.start.dateTime ? ev.start.dateTime.slice(0,10) : '');
             var timeStr  = ev.start.dateTime
-              ? new Date(ev.start.dateTime).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})
-              : 'All Day';
-            return { id:ev.id, summary:ev.summary||'Event', start:startStr, time:timeStr, desc:ev.description||'' };
+              ? new Date(ev.start.dateTime).toLocaleTimeString('es-US',{hour:'numeric',minute:'2-digit'})
+              : 'Todo el día';
+            return { id:ev.id, summary:ev.summary||'Evento', start:startStr, time:timeStr, desc:ev.description||'' };
           });
-          calSub.textContent = 'Live \u2014 Google Calendar';
+          calSub.textContent = 'En vivo \u2014 Google Calendar';
           renderGrid(); renderEvents();
         })
         .catch(function() {
@@ -1864,7 +1840,7 @@
         });
     } else {
       allEvents = MOCK;
-      calSub.textContent = 'Preview \u2014 sample events';
+      calSub.textContent = 'Vista previa \u2014 eventos de muestra';
       renderGrid(); renderEvents();
     }
   }
@@ -1940,7 +1916,7 @@
       var lbl = selDate && selDate.yr===vYear && selDate.mo===vMonth
         ? MONTHS[selDate.mo] + ' ' + selDate.day
         : MONTHS[vMonth];
-      calEvList.innerHTML = '<div class="cal-empty"><span>&#128197;</span>No events for ' + lbl + '.</div>';
+      calEvList.innerHTML = '<div class="cal-empty"><span>&#128197;</span>No hay eventos para ' + lbl + '.</div>';
       return;
     }
 
