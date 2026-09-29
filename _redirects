@@ -1,0 +1,6 @@
+# Netlify redirect rules (inert on any other host).
+# Legacy URLs from the school's previous website platform that Google still has
+# indexed — send visitors to the current homepage instead of a 404.
+/fostering-success-together  /  301
+/why-private-education       /  301
+/news                        /  301

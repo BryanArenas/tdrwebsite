@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <script>/* lang-detect: send Spanish-preferring visitors to es.html unless they've chosen otherwise */(function(){try{var s=localStorage.getItem('tdr_lang');if(s==='es'){location.replace('es.html');return;}if(!s){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase();if(l.indexOf('es')===0){location.replace('es.html');}}}catch(e){}})();</script>
+  <script>/* lang-detect: send Spanish-preferring visitors to es.html unless they've chosen otherwise */(function(){try{var s=localStorage.getItem('tdr_lang');if(s==='es'){location.replace('es.html'+location.search+location.hash);return;}if(!s){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase();if(l.indexOf('es')===0){location.replace('es.html'+location.search+location.hash);}}}catch(e){}})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="color-scheme" content="light"/>
   <title>TDR Learning Academy — Christian K–12 Private School | Orlando, FL</title>
@@ -10,6 +10,7 @@
   <meta property="og:description" content="A faith-based K–12 private school in Orlando, FL. Open enrollment, Florida School Choice accepted."/>
   <meta property="og:site_name" content="TDR Learning Academy"/>
   <meta property="og:locale" content="en_US"/>
+  <meta property="og:locale:alternate" content="es_LA"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://www.tdracademy.org/"/>
   <meta property="og:image" content="https://www.tdracademy.org/og-image.png"/>
@@ -1992,7 +1993,7 @@
     if (!canvas) return;
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var ctx = canvas.getContext('2d');
-    var W, H, DPR, particles;
+    var W, H, DPR, particles = [];
     var GOLD     = 'rgba(200,134,26,';
     var CHARCOAL = 'rgba(28,28,28,';
     var pointer  = { x: -9999, y: -9999 };

@@ -105,6 +105,35 @@ parent permission before republishing names. Do **NOT** add `aggregateRating`/`R
 self-serving review markup on Organization/LocalBusiness violates Google's structured-data guidelines
 (ignored at best, manual action at worst).
 
+## 🔧 Issue diagnosis + fixes (2026-09-29)
+
+Owner reported the live site "exhibiting issues" (visual glitch / site down). Full browser test battery
+on `main` (EN/ES redirects + toggle, all modals, wizard, gallery, mobile menu, scroll reveals,
+reduced-motion, overflow) passed — the repo's code was healthy. Fixed the two real defects found:
+
+- [x] Hero canvas race: the IntersectionObserver could call `draw()` before `start()` initialized
+  `particles`, throwing `TypeError … reading 'length'` on nearly every load (self-healed next frame).
+  `particles` now initializes to `[]` at declaration. Both pages.
+- [x] Language auto-redirect dropped `location.search`/`location.hash` — Spanish-locale visitors opening
+  deep links like `/#admissions` landed at the top. Both directions now preserve query + hash.
+- [x] es.html head brought up to the SEO standard of index/donors: `og:site_name`, `og:locale` (`es_LA`,
+  alternate `en_US`; index got alternate `es_LA`), JSON-LD upgraded to the shared
+  `["School","LocalBusiness"]` entity (`@id …#school`, `hasMap`, `areaServed`, directory `sameAs`),
+  keeping the Spanish description/slogan + `inLanguage`.
+- [x] `_redirects` (Netlify format, inert elsewhere): 301s for legacy URLs Google still indexes from the
+  school's previous website platform (`/fostering-success-together`, `/why-private-education`, `/news`).
+
+**Live-site findings that are NOT in this repo's control** (diagnosed via search index + connected tools;
+the CC sandbox cannot reach tdracademy.org directly):
+
+- Hosting is external (GitHub Pages off, no deploy workflow; owner believes Netlify — unconfirmed). If a
+  deploy doesn't auto-trigger on merge, the site must be re-published manually.
+- Google indexes legacy pages (`/fostering-success-together`, `/why-private-education`) from a previous
+  site platform — the `_redirects` above absorbs them once live on Netlify.
+- GoHighLevel "TDR Academy" location has an untouched stock website funnel ("Educational Tutoring",
+  created 2026-08-28, no domain attached) — an abandoned rebuild experiment; not serving the domain, but
+  whoever created it may be planning DNS/platform changes. Clarify before anyone repoints the domain.
+
 ## Hosting note
 
 Repo is private; GitHub Pages free tier requires a public repo. Netlify / Vercel / Cloudflare Pages deploy private repos free, allow custom headers (caching, CSP), and Netlify Forms could replace EmailJS entirely while staying fully static.

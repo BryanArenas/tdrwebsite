@@ -2,12 +2,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8"/>
-  <script>/* lang-detect: send visitors who chose English back to index.html */(function(){try{if(localStorage.getItem('tdr_lang')==='en'){location.replace('index.html');}}catch(e){}})();</script>
+  <script>/* lang-detect: send visitors who chose English back to index.html */(function(){try{if(localStorage.getItem('tdr_lang')==='en'){location.replace('index.html'+location.search+location.hash);}}catch(e){}})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="color-scheme" content="light"/>
   <title>TDR Learning Academy — Escuela Cristiana Privada K–12 | Orlando, FL</title>
   <meta property="og:title" content="TDR Learning Academy — Escuela Cristiana Privada K–12"/>
   <meta property="og:description" content="Escuela privada cristiana K–12 en Orlando, FL. Inscripción abierta; aceptamos becas Florida School Choice."/>
+  <meta property="og:site_name" content="TDR Learning Academy"/>
+  <meta property="og:locale" content="es_LA"/>
+  <meta property="og:locale:alternate" content="en_US"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://www.tdracademy.org/es.html"/>
   <meta property="og:image" content="https://www.tdracademy.org/og-image.png"/>
@@ -29,7 +32,8 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "School",
+    "@type": ["School", "LocalBusiness"],
+    "@id": "https://www.tdracademy.org/#school",
     "name": "TDR Learning Academy",
     "description": "Escuela privada cristiana K–12 en Orlando, FL, con inscripción abierta, becas de Florida School Choice y educación integrada en la fe.",
     "inLanguage": "es",
@@ -47,13 +51,20 @@
       "postalCode": "32806",
       "addressCountry": "US"
     },
+    "hasMap": "https://maps.google.com/?q=3057+Curry+Ford+Rd+Orlando+FL+32806",
+    "areaServed": "Greater Orlando, FL",
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Thursday","Friday"], "opens": "07:30", "closes": "16:30" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "07:30", "closes": "15:30" }
     ],
     "sameAs": [
       "https://www.instagram.com/tdr_academy/",
-      "https://www.facebook.com/TDRLearningAcademy"
+      "https://www.facebook.com/TDRLearningAcademy",
+      "https://www.yelp.com/biz/tdr-academy-orlando",
+      "https://www.niche.com/k12/tdr-academy-orlando-fl/",
+      "https://www.greatschools.org/florida/orlando/19638-TDR-Learning-Academy/",
+      "https://www.usnews.com/education/k12/florida/tdr-learning-academy-318778",
+      "https://www.privateschoolreview.com/tdr-learning-academy-profile"
     ]
   }
   </script>
@@ -1958,7 +1969,7 @@
     if (!canvas) return;
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var ctx = canvas.getContext('2d');
-    var W, H, DPR, particles;
+    var W, H, DPR, particles = [];
     var GOLD     = 'rgba(200,134,26,';
     var CHARCOAL = 'rgba(28,28,28,';
     var pointer  = { x: -9999, y: -9999 };
