@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="color-scheme" content="light"/>
+  <title>Text Message Updates — TDR Learning Academy</title>
+  <meta name="description" content="Opt in to receive text message updates from TDR Learning Academy — enrollment reminders, school closures, and event notices. Message and data rates may apply. Reply STOP to cancel."/>
+  <meta name="theme-color" content="#FAFAF8"/>
+  <link rel="canonical" href="https://www.tdracademy.org/sms"/>
+  <meta property="og:title" content="Text Message Updates — TDR Learning Academy"/>
+  <meta property="og:description" content="Opt in to receive text updates from TDR Learning Academy. Message frequency varies. Message and data rates may apply."/>
+  <meta property="og:site_name" content="TDR Learning Academy"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.tdracademy.org/sms"/>
+  <meta property="og:image" content="https://www.tdracademy.org/og-image.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image" content="https://www.tdracademy.org/og-image.png"/>
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" as="style"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --gold:#C8861A; --gold-h:#A86E10; --gold-lt:#E8A83A; --gold-dim:rgba(200,134,26,0.09);
+      --white:#FAFAF8; --off:#F3F1ED; --charcoal:#1C1C1C; --mid:#4A4A4A; --sub:#888888; --rule:#E0DDD8;
+      --serif:'Cormorant Garamond', Georgia, serif;
+      --sans:'DM Sans', system-ui, -apple-system, sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--sans);background:var(--white);color:var(--charcoal);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    a{color:var(--gold-h);text-decoration:underline;text-underline-offset:2px}
+    a:hover{color:var(--gold)}
+    .wrap{max-width:720px;margin:0 auto;padding:0 24px}
+
+    /* Header */
+    header.site{border-bottom:1px solid var(--rule);background:#fff}
+    header.site .wrap{display:flex;align-items:center;gap:14px;padding:18px 24px}
+    header.site img{height:40px;width:auto;display:block}
+    header.site .name{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--charcoal);line-height:1.1}
+    header.site .back{margin-left:auto;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;color:var(--mid)}
+    header.site .back:hover{color:var(--gold-h)}
+
+    /* Hero / intro */
+    main{padding:56px 0 72px}
+    .eyebrow{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-h);margin-bottom:14px}
+    h1{font-family:var(--serif);font-weight:300;font-size:clamp(32px,6vw,46px);line-height:1.08;letter-spacing:-0.01em;margin-bottom:18px}
+    h1 em{font-style:italic;color:var(--gold-h)}
+    .lede{font-size:17px;color:var(--mid);max-width:58ch;margin-bottom:34px}
+
+    /* Opt-in card */
+    .card{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:30px 30px 32px;box-shadow:0 1px 2px rgba(28,28,28,0.03),0 10px 30px rgba(28,28,28,0.04)}
+    .card h2{font-family:var(--serif);font-size:26px;font-weight:600;margin-bottom:6px}
+    .card p.sub{color:var(--mid);font-size:15px;margin-bottom:22px}
+    .steps{list-style:none;counter-reset:s;margin:0 0 6px}
+    .steps li{counter-increment:s;position:relative;padding-left:44px;margin-bottom:16px;font-size:15.5px;color:var(--charcoal)}
+    .steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:30px;height:30px;border-radius:50%;background:var(--gold-dim);color:var(--gold-h);font-family:var(--sans);font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center}
+    .steps li b{font-weight:600}
+    .cta{margin-top:20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .cta button{font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.02em;color:#fff;background:var(--gold);border:none;border-radius:999px;padding:14px 26px;cursor:pointer;transition:background-color .2s}
+    .cta button:hover{background:var(--gold-h)}
+    .cta .hint{font-size:13px;color:var(--sub)}
+
+    /* Disclosures */
+    .disclose{margin-top:40px;padding-top:32px;border-top:1px solid var(--rule)}
+    .disclose h3{font-family:var(--serif);font-size:21px;font-weight:600;margin-bottom:14px}
+    .disclose h3:not(:first-child){margin-top:30px}
+    .disclose p{font-size:14.5px;color:var(--mid);margin-bottom:12px;max-width:64ch}
+    .disclose ul{list-style:none;margin:0 0 12px}
+    .disclose ul li{position:relative;padding-left:20px;font-size:14.5px;color:var(--mid);margin-bottom:8px;max-width:64ch}
+    .disclose ul li::before{content:"";position:absolute;left:2px;top:9px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+    .disclose strong{color:var(--charcoal);font-weight:600}
+    .callout{background:var(--off);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:14px 18px;font-size:14.5px;color:var(--charcoal);margin:6px 0 18px}
+
+    /* Footer */
+    footer.site{border-top:1px solid var(--rule);background:#fff;padding:34px 0 40px;margin-top:8px}
+    footer.site .wrap{text-align:center}
+    footer.site .slogan{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--mid);margin-bottom:14px}
+    footer.site .meta{font-size:13.5px;color:var(--sub);line-height:1.9}
+    footer.site .meta a{color:var(--mid)}
+    footer.site .legal{margin-top:16px;font-size:12px;color:var(--sub)}
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <img src="TDR_Logo.png" alt="TDR Learning Academy logo"/>
+      <span class="name">TDR Learning Academy</span>
+      <a class="back" href="/">&larr; Back to site</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="eyebrow">Text Message Updates</div>
+      <h1>Stay in the loop by <em>text.</em></h1>
+      <p class="lede">Opt in to get important text updates from TDR Learning Academy — enrollment reminders, school closures and schedule changes, and event notices — sent straight to your phone.</p>
+
+      <div class="card">
+        <h2>Opt in to texts</h2>
+        <p class="sub">It takes a few seconds, and you can cancel anytime.</p>
+        <ol class="steps">
+          <li>Tap the <b>chat button</b> in the bottom corner of this page.</li>
+          <li>Send us your <b>name and mobile number</b> and let us know you'd like text updates.</li>
+          <li>We'll reply to confirm. That's it — you're subscribed.</li>
+        </ol>
+        <div class="cta">
+          <button type="button" id="openChat" aria-label="Open the chat to opt in to text messages">Text us to opt in</button>
+          <span class="hint">Opens the chat widget in the corner.</span>
+        </div>
+      </div>
+
+      <section class="disclose" aria-label="SMS terms and privacy">
+        <h3>What you're signing up for</h3>
+        <p>By opting in through the chat widget on this page, you agree to receive text messages from TDR Learning Academy. Messages may include:</p>
+        <ul>
+          <li>Enrollment and application reminders</li>
+          <li>School closures, delays, and schedule changes</li>
+          <li>Event, program, and important school announcements</li>
+          <li>Replies to questions you send us (two-way conversation)</li>
+        </ul>
+        <div class="callout"><strong>Consent is not a condition of enrollment</strong> or of any purchase. You don't have to opt in to apply to or attend TDR Learning Academy.</div>
+        <p><strong>Message frequency varies.</strong> <strong>Message and data rates may apply.</strong> Reply <strong>STOP</strong> at any time to unsubscribe, or <strong>HELP</strong> for help. You can also contact us at <a href="tel:+14076948595">(407)&nbsp;694&#8209;8595</a> or <a href="mailto:Hello@tdracademy.org">Hello@tdracademy.org</a>.</p>
+
+        <h3>Privacy</h3>
+        <p>We respect your privacy. The mobile phone number and information you provide when you opt in are used only to send you the messages described above and to respond to you. <strong>We do not sell or share your mobile opt-in information or phone number with third parties or affiliates for their marketing or promotional purposes.</strong></p>
+        <p>No mobile information will be shared with third parties for marketing. Information may be shared only with service providers that help us operate our messaging program (for example, our messaging platform), and only as needed to deliver the service. Message and data rates may apply depending on your mobile carrier and plan.</p>
+
+        <h3>Terms</h3>
+        <p>Carriers are not liable for delayed or undelivered messages. For help, reply HELP to any message or email <a href="mailto:Hello@tdracademy.org">Hello@tdracademy.org</a>. To stop receiving messages, reply STOP; you will receive a single confirmation and no further messages unless you opt in again.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <p class="slogan">Planting good seed in our future leaders.</p>
+      <p class="meta">
+        TDR Learning Academy &middot; 3057 Curry Ford Rd, Orlando, FL 32806<br/>
+        <a href="tel:+14076948595">(407) 694-8595</a> &middot; <a href="mailto:Hello@tdracademy.org">Hello@tdracademy.org</a> &middot; <a href="/">tdracademy.org</a>
+      </p>
+      <p class="legal">&copy; <span id="yr"></span> TDR Learning Academy. Message &amp; data rates may apply. Reply STOP to cancel, HELP for help.</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+  <script>
+    // Open the LeadConnector chat widget when the opt-in button is clicked.
+    document.getElementById('openChat').addEventListener('click', function () {
+      var w = document.querySelector('chat-widget');
+      if (w && typeof w.openWidget === 'function') { w.openWidget(); return; }
+      var bubble = document.querySelector('[class*="chat-widget"] button, chat-widget');
+      if (bubble && bubble.click) { bubble.click(); return; }
+      // Fallback: scroll attention to the corner where the widget loads.
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    });
+  </script>
+
+  <!-- LeadConnector chat widget (A2P SMS opt-in) -->
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6ad9121befcd72a99da80051" data-source="WEB_USER"></script>
+</body>
+</html>

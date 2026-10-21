@@ -4,3 +4,6 @@
 /fostering-success-together  /  301
 /why-private-education       /  301
 /news                        /  301
+
+# A2P SMS opt-in page — serve clean /sms URL
+/sms  /sms.html  200
